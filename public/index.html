@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Line Check | Hard Rock Cafe Dublin</title>
+  <meta name="theme-color" content="#111111">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Line Check">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon-192.png">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/print.css">
+  <script type="module" src="js/app.mjs"></script>
+</head>
+<body>
+  <div id="app"><p class="boot">Loading the line check…</p></div>
+  <div id="crash" class="crash" role="alert" hidden>
+    <span>Something went wrong on this screen. Everything you entered is saved on the tablet.</span>
+    <button id="crash-reload" type="button">Reload</button>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <div id="print-root"></div>
+  <noscript><p class="boot">The line check needs JavaScript turned on.</p></noscript>
+</body>
+</html>

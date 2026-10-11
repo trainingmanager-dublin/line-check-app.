@@ -1,0 +1,7 @@
+# Netlify: static site from public/. The tests must pass or the deploy is cancelled.
+[build]
+  publish = "public"
+  command = "npm test"
+
+[build.environment]
+  NODE_VERSION = "22"

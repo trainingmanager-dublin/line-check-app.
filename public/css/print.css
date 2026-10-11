@@ -1,0 +1,69 @@
+/* The printed sheets (also used for the on-screen preview). A4 landscape. */
+
+.print-doc { color: #000; font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif; font-size: 9.5px; line-height: 1.2; }
+.print-doc + .print-doc { margin-top: 32px; }
+.p-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.p-table td, .p-table th { border: 1px solid #000; padding: 2px 4px; vertical-align: middle; overflow-wrap: anywhere; }
+.p-table th { font-weight: 700; }
+.p-small { font-size: 8px; }
+.p-center { text-align: center; }
+.p-right { text-align: right; font-weight: 700; padding-right: 8px !important; }
+.p-name { font-size: 10px; }
+.p-q { font-size: 8.5px; }
+.p-mark { text-align: center; font-size: 10px; white-space: nowrap; }
+.p-com { font-size: 8px; }
+.pm-ok { color: #000; font-weight: 700; }
+.pm-no { color: #b00000; font-weight: 700; }
+.pm-bad { color: #c00000; font-weight: 700; }
+.pm-codes { font-weight: 700; }
+
+/* Line check sheet: column widths follow the Excel template */
+.c-item { width: 14%; } .c-temp { width: 6.5%; } .c-life { width: 6%; } .c-ut { width: 8%; } .c-q { width: 35.5%; }
+.c-mark { width: 4.5%; } .c-com { width: 10.5%; }
+.p-top td { border: 1px solid #000; vertical-align: top; }
+.p-brand { font-size: 11px; padding: 0 !important; }
+.p-brand > div { padding: 3px 4px; }
+.p-title { background: #c5d9f1; border-top: 1px solid #000; font-weight: 700; }
+.p-gloss-title { font-style: italic; text-align: center; margin-bottom: 2px; }
+.p-gloss-grid { display: grid; grid-template-columns: auto 1fr auto 1fr auto 1fr; gap: 1px 6px; font-size: 9px; }
+.p-date { text-align: center; }
+.p-date-label { font-size: 8px; color: #444; }
+.p-date-value { font-size: 14px; font-weight: 700; }
+.p-day { font-size: 9px; }
+.p-logo { text-align: center; vertical-align: middle !important; }
+.p-logo img { height: 40px; }
+.p-sec th { background: #000; color: #fff; text-align: center; font-size: 9.5px; }
+.p-sec th:first-child { text-align: left; }
+.p-initials td { height: 30px; border-top: 2px solid #000; }
+.p-foot { margin-top: 6px; font-size: 8px; color: #333; }
+
+/* Temperature checklist */
+.t-head { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin-bottom: 6px; }
+.t-head h1 { font-size: 16px; text-align: center; }
+.t-head img { justify-self: end; height: 40px; }
+.t-date { font-size: 12px; font-weight: 700; }
+.t-station { width: 17%; } .t-food { width: 11%; } .t-val { width: 6.5%; } .t-ca { width: 20%; }
+.t-main td, .t-main th { height: 22px; text-align: center; }
+.t-main td.p-name, .t-main td.p-com, .t-main td.p-small { text-align: left; }
+.t-main .p-name { font-weight: 700; }
+.t-big { font-size: 13px; }
+.t-gap td { height: 8px; border-left: 0; border-right: 0; }
+.t-black { background: #000; }
+.t-side { margin-top: 10px; }
+.t-side td, .t-side th { height: 22px; text-align: center; }
+.t-side .p-com { text-align: left; }
+.t-targets { text-align: left !important; }
+
+#print-root { display: none; }
+
+@media print {
+  @page { size: A4 landscape; margin: 8mm; }
+  html, body { background: #fff !important; }
+  body > *:not(#print-root) { display: none !important; }
+  #print-root { display: block; }
+  .print-doc { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .print-doc + .print-doc { margin-top: 0; break-before: page; }
+  .p-table thead { display: table-header-group; }
+  .p-table tr { break-inside: avoid; }
+  .print-temps { zoom: .92; }
+}
