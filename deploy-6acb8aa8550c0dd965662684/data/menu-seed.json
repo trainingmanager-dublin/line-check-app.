@@ -1,0 +1,4864 @@
+{
+ "title": "Dublin menu · recipe cross-check",
+ "version": 1,
+ "updatedAt": null,
+ "publishedBy": null,
+ "dishes": [
+  {
+   "id": "source-0",
+   "name": "BBQ Bacon Burger",
+   "category": "Steak burgers",
+   "description": "Steak burger, barbecue, crispy shoestring onions, cheddar, smoked bacon, lettuce, tomato and artisan bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Beef patty",
+    "Salt",
+    "Love All Spice Blend (contains celery)",
+    "Black pepper",
+    "Barbecue sauce (Ketchup, Brown sugar, Molasses, Apple cider vinegar, Water, Mustard, Smoked paprika, Garlic powder, Cayenne pepper, Salt, Black pepper)",
+    "Crispy onions (Onion, Flour, Cornstarch, Salt, White pepper, Baking powder, Garlic powder, Cayenne pepper, Black pepper)",
+    "Cheddar",
+    "Bacon",
+    "Lettuce",
+    "Tomato",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap to the gluten-free vegan bun and leave off the crispy onions. Check with the kitchen how the bun is toasted. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Gluten"
+     ],
+     "remaining": [
+      "Milk",
+      "Soy",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the cheddar.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the signature spice blend and the barbecue sauce. Both contain celery.",
+     "resolves": [
+      "Celery"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": false
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Gluten: bun and crispy onions. Milk: cheddar. Celery: signature spice blend and barbecue sauce. Mustard and sulphites: barbecue sauce. Soy: listed on the menu, but none of the recipe ingredients shows where it comes from.",
+   "notes": "The patty is seasoned with the signature spice blend, which contains celery salt. The printed menu still shows the egg code from the old bun recipe; the current bun is egg-free.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-1",
+   "name": "Original Legendary Burger",
+   "category": "Steak burgers",
+   "description": "Steak burger, smoked bacon, cheddar, onion ring, lettuce, tomato and artisan bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Beef patty",
+    "Salt",
+    "Black pepper",
+    "Bacon",
+    "Cheddar",
+    "Onion ring",
+    "Lettuce",
+    "Tomato",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the onion ring.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Swap to the gluten-free vegan bun and leave off the onion ring. Check with the kitchen how the bun is toasted. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Egg",
+      "Gluten"
+     ],
+     "remaining": [
+      "Milk",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Leave off the cheddar and the onion ring.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Gluten",
+      "Celery"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Celery"
+     ],
+     "note": "Celery comes from the onion ring. Ask the chef before offering this burger without it.",
+     "showInSubstitutes": false
+    },
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": true
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Gluten: bun and onion ring. Egg and celery: onion ring. Milk: cheddar and onion ring. A gluten-free bun does not remove the allergens in the onion ring.",
+   "notes": "The patty is seasoned with salt and pepper only.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-2",
+   "name": "Legendary Smashed Burger",
+   "category": "Smashed burgers",
+   "description": "Two smashed burgers, cheddar, bacon onion jam, cheese sauce, Legendary Sauce, pickles, smoked bacon and bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Beef patties",
+    "Salt",
+    "Black pepper",
+    "Cheddar",
+    "Bacon onion jam (onion, oil, demi-glace, water, brown sugar, bacon, salt, pepper)",
+    "Queso (Onion, Garlic, Thyme, Olive oil, Heavy cream, Grain mustard, Hot sauce, Cayenne pepper, Salt, Black pepper, White cheddar, American cheese)",
+    "Legendary Sauce (Mayonnaise (egg), Ketchup, Mustard, Paprika, Black pepper, Garlic powder, Salt)",
+    "Pickles",
+    "Bacon",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the Legendary Sauce.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Mustard",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Leave off the cheddar and the cheese sauce.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Gluten",
+      "Mustard",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Swap to the gluten-free vegan bun. Check with the kitchen how the bun is toasted, and confirm the bacon onion jam. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Gluten"
+     ],
+     "remaining": [
+      "Egg",
+      "Milk",
+      "Mustard",
+      "Celery"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": true
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg, mustard and celery: Legendary Sauce. Milk: cheddar and cheese sauce. Mustard: cheese sauce. Gluten: bun.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-3",
+   "name": "The Classic Smashed Burger",
+   "category": "Smashed burgers",
+   "description": "Two smashed burgers, onions, American cheese, lettuce, tomato, Legendary Sauce, pickles and bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Beef patties",
+    "Salt",
+    "Black pepper",
+    "Onion",
+    "American cheese",
+    "Lettuce",
+    "Tomato",
+    "Legendary Sauce (Mayonnaise (egg), Ketchup, Mustard, Paprika, Black pepper, Garlic powder, Salt)",
+    "Pickles",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the Legendary Sauce.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Mustard",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Leave off the American cheese.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Gluten",
+      "Mustard",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Swap to the gluten-free vegan bun. Check with the kitchen how the bun is toasted. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Gluten"
+     ],
+     "remaining": [
+      "Egg",
+      "Milk",
+      "Mustard",
+      "Celery"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": true
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg, mustard and celery: Legendary Sauce. Milk: American cheese. Gluten: bun.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-4",
+   "name": "Spicy Diablo Smashed Burger",
+   "category": "Smashed burgers",
+   "description": "Two smashed burgers, pepper jack cheese, jalapeños, lettuce, tomato, spicy mayonnaise and bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Beef patties",
+    "Salt",
+    "Black pepper",
+    "Pepper jack cheese",
+    "Jalapeño",
+    "Lettuce",
+    "Tomato",
+    "Spicy mayonnaise (Mayonnaise (egg), Parsley, Green onions, Sriracha, Hot sauce, Red pepper flakes, Lemon juice, Salt, Black pepper)",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the spicy mayo.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the pepper jack cheese.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Swap to the gluten-free vegan bun. Check with the kitchen how the bun is toasted. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Gluten"
+     ],
+     "remaining": [
+      "Egg",
+      "Milk",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": true
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg, soy, mustard and sulphites: spicy mayo. Milk: pepper jack cheese. Gluten: bun.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-5",
+   "name": "Guinness Cheese & Bacon Burger",
+   "category": "Steak burgers",
+   "description": "Steak burger, Slane whiskey bacon jam, Guinness cheese sauce, lettuce, tomato and artisan bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk",
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Beef patty",
+    "Salt",
+    "Black pepper",
+    "Slane whiskey bacon jam",
+    "Guinness cheese sauce",
+    "Lettuce",
+    "Tomato",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the Guinness cheese sauce and swap to the gluten-free vegan bun. Check the bacon jam with the kitchen, and how the bun is toasted. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Gluten"
+     ],
+     "remaining": [
+      "Milk"
+     ]
+    },
+    {
+     "instruction": "Leave off the Guinness cheese sauce. Check the bacon jam with the kitchen.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Gluten"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": false
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Milk and gluten (barley): Guinness cheese sauce. Gluten: bun.",
+   "notes": "The patty is seasoned with salt and pepper only. The printed menu still shows the egg code from the old bun recipe; the current bun is egg-free. Full recipes for the bacon jam and the Guinness cheese sauce are not on file, so check with the kitchen for any other allergy.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-6",
+   "name": "Moving Mountains Burger",
+   "category": "Steak burgers",
+   "description": "Vegetarian build: plant-based patty, regular cheddar cheese, onion ring, lettuce, tomato and bun. Vegan build: plant-based patty, vegan cheese, no onion ring, lettuce, tomato and bun.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Moving Mountains No Beef patty (water, coconut oil, oyster mushroom, mushroom, onion, soya protein, soya isolate, pea protein, wheat gluten, natural flavouring, oat fibre, wheat starch, methylcellulose, barley malt extract, beetroot powder, salt, vitamin B12)",
+    "Cheddar",
+    "Onion ring",
+    "Lettuce",
+    "Tomato",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Order the vegan version: vegan cheese instead of cheddar, and no onion ring.",
+     "resolves": [
+      "Egg",
+      "Milk",
+      "Vegan"
+     ],
+     "remaining": [
+      "Gluten",
+      "Soy",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Leave off the onion ring. The cheddar can stay if milk is not a concern.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Soy",
+      "Celery"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Celery"
+     ],
+     "note": "Celery comes from the onion ring. Ask the chef before offering this burger without it.",
+     "showInSubstitutes": false
+    },
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": true
+    },
+    {
+     "allergens": [
+      "Vegan"
+     ],
+     "note": "For the vegan version, confirm with the chef that the vegan bun and vegan cheese are used.",
+     "showInSubstitutes": false
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Soy and gluten: the plant-based patty. Egg and celery: onion ring. Milk: cheddar and onion ring. Gluten: bun and onion ring. The vegan version has vegan cheese and no onion ring.",
+   "notes": "The plant-based patty contains wheat gluten, so a gluten-free bun does not make this burger gluten-free.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-7",
+   "name": "Classic Nachos",
+   "category": "Starters",
+   "description": "Tortilla chips, black beans, queso, pickled pico, jalapeños, cheddar, Monterey Jack, green onions and lime crema.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Corn tortilla chips",
+    "Black beans",
+    "Queso (Onion, Garlic, Thyme, Olive oil, Heavy cream, Grain mustard, Hot sauce, Cayenne pepper, Salt, Black pepper, White cheddar, American cheese)",
+    "Pickled pico (Tomato, Pickled red onion (apple cider vinegar, water, salt), Jalapeño, Salt, Coriander)",
+    "Jalapeño",
+    "Cheddar",
+    "Monterey Jack",
+    "Green onions",
+    "Lime crema (Sour cream, Lime juice, Lime zest, Cilantro pesto (coriander, vegetable oil, garlic, salt, pepper), Salt)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the queso, both cheeses and the lime crema. For a vegan guest, confirm the chips and beans with the kitchen.",
+     "resolves": [
+      "Milk",
+      "Vegan"
+     ],
+     "remaining": [
+      "Gluten",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk: queso, cheddar, Monterey Jack and lime crema. Mustard: queso. Gluten and sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-8",
+   "name": "Wings · Classic Buffalo",
+   "category": "Starters",
+   "description": "Slow-roasted wings, celery and blue cheese dressing.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Chicken wings",
+    "Spice blend (Paprika, Brown sugar, Salt, Garlic powder, Celery salt, Chili powder, Black pepper, Onion powder, Oregano, Mustard, Cayenne pepper)",
+    "Chicken stock",
+    "Liquid smoke",
+    "Vegetable oil",
+    "Buffalo sauce (Hot sauce, Butter or butter alternative, Garlic powder)",
+    "Celery",
+    "Blue cheese dressing (Mayonnaise (egg), Sour cream, Buttermilk, Onion, Lemon juice, Paprika, Black pepper, Salt, Garlic, White pepper, Cayenne pepper, Blue cheese)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the blue cheese dressing (it contains egg). Do not replace it with another mayonnaise-based dip: ranch, honey mustard, Legendary Sauce, spicy mayo and herb aioli all contain egg.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Gluten"
+     ],
+     "note": "No gluten in the recipe. The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so there is a risk of gluten cross-contact. Check with the chef before serving.",
+     "showInSubstitutes": true
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg and milk: blue cheese dressing. Milk: Buffalo sauce. Mustard and celery: wing spice blend. Celery sticks are served on the side. Sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-9",
+   "name": "Wings · Barbecue",
+   "category": "Starters",
+   "description": "Slow-roasted wings with house-made barbecue, celery and blue cheese dressing.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Chicken wings",
+    "Spice blend (Paprika, Brown sugar, Salt, Garlic powder, Celery salt, Chili powder, Black pepper, Onion powder, Oregano, Mustard, Cayenne pepper)",
+    "Chicken stock",
+    "Liquid smoke",
+    "Vegetable oil",
+    "Barbecue sauce (Ketchup, Brown sugar, Molasses, Apple cider vinegar, Water, Mustard, Smoked paprika, Garlic powder, Cayenne pepper, Salt, Black pepper)",
+    "Celery",
+    "Blue cheese dressing (Mayonnaise (egg), Sour cream, Buttermilk, Onion, Lemon juice, Paprika, Black pepper, Salt, Garlic, White pepper, Cayenne pepper, Blue cheese)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the blue cheese dressing (it contains egg). Do not replace it with another mayonnaise-based dip: ranch, honey mustard, Legendary Sauce, spicy mayo and herb aioli all contain egg.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the blue cheese dressing.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Gluten"
+     ],
+     "note": "No gluten in the recipe. The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so there is a risk of gluten cross-contact. Check with the chef before serving.",
+     "showInSubstitutes": true
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg and milk: blue cheese dressing. Mustard and celery: wing spice blend and barbecue sauce. Sulphites: barbecue sauce. Celery sticks are served on the side.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-10",
+   "name": "Wings · Stardust Dry Rub",
+   "category": "Starters",
+   "description": "Slow-roasted wings, celery and blue cheese dressing.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Chicken wings",
+    "Spice blend (Paprika, Brown sugar, Salt, Garlic powder, Celery salt, Chili powder, Black pepper, Onion powder, Oregano, Mustard, Cayenne pepper)",
+    "Brown sugar",
+    "Chicken stock",
+    "Liquid smoke",
+    "Vegetable oil",
+    "Celery",
+    "Blue cheese dressing (Mayonnaise (egg), Sour cream, Buttermilk, Onion, Lemon juice, Paprika, Black pepper, Salt, Garlic, White pepper, Cayenne pepper, Blue cheese)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the blue cheese dressing (it contains egg). Do not replace it with another mayonnaise-based dip: ranch, honey mustard, Legendary Sauce, spicy mayo and herb aioli all contain egg.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the blue cheese dressing.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Gluten"
+     ],
+     "note": "No gluten in the recipe. The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so there is a risk of gluten cross-contact. Check with the chef before serving.",
+     "showInSubstitutes": true
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg and milk: blue cheese dressing. Mustard and celery: the dry rub. Celery sticks are served on the side. Sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-11",
+   "name": "Wings · Sweet & Tangy",
+   "category": "Starters",
+   "description": "Slow-roasted wings, celery and blue cheese dressing.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Chicken wings",
+    "Spice blend (Paprika, Brown sugar, Salt, Garlic powder, Celery salt, Chili powder, Black pepper, Onion powder, Oregano, Mustard, Cayenne pepper)",
+    "Chicken stock",
+    "Liquid smoke",
+    "Vegetable oil",
+    "Sweet & tangy sauce (Hot sauce, Brown sugar, Butter alternative, Apple cider vinegar)",
+    "Celery",
+    "Blue cheese dressing (Mayonnaise (egg), Sour cream, Buttermilk, Onion, Lemon juice, Paprika, Black pepper, Salt, Garlic, White pepper, Cayenne pepper, Blue cheese)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the blue cheese dressing (it contains egg). Do not replace it with another mayonnaise-based dip: ranch, honey mustard, Legendary Sauce, spicy mayo and herb aioli all contain egg.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the blue cheese dressing.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Gluten"
+     ],
+     "note": "No gluten in the recipe. The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so there is a risk of gluten cross-contact. Check with the chef before serving.",
+     "showInSubstitutes": true
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg and milk: blue cheese dressing. Mustard and celery: wing spice blend. Celery sticks are served on the side. Sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-12",
+   "name": "Wings · Gochujang",
+   "category": "Starters",
+   "description": "Slow-roasted wings, celery and blue cheese dressing.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Sesame",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [
+    "Mustard"
+   ],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The wings are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Chicken wings",
+    "Spice blend (Paprika, Brown sugar, Salt, Garlic powder, Celery salt, Chili powder, Black pepper, Onion powder, Oregano, Mustard, Cayenne pepper)",
+    "Chicken stock",
+    "Liquid smoke",
+    "Vegetable oil",
+    "Gochujang sauce (Ketchup, Gochujang chili paste, Honey, Brown sugar, Garlic, Soy sauce, Sesame oil)",
+    "Sesame seeds",
+    "Green onions",
+    "Celery",
+    "Blue cheese dressing (Mayonnaise (egg), Sour cream, Buttermilk, Onion, Lemon juice, Paprika, Black pepper, Salt, Garlic, White pepper, Cayenne pepper, Blue cheese)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the blue cheese dressing (it contains egg). Do not replace it with another mayonnaise-based dip: ranch, honey mustard, Legendary Sauce, spicy mayo and herb aioli all contain egg.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Soy",
+      "Sesame",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the blue cheese dressing.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Gluten",
+      "Soy",
+      "Sesame",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Gluten and soy: Gochujang sauce (soy sauce and chilli paste). Sesame: sesame oil and sesame seeds. Egg and milk: blue cheese dressing. Celery: wing spice blend, and celery sticks on the side. Sulphites: listed on the menu.",
+   "notes": "The wing spice blend contains mustard, but the printed menu does not list mustard for this flavour. Treat mustard as may contain until the chef confirms.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-13",
+   "name": "One Night in Bangkok Spicy Shrimp",
+   "category": "Starters",
+   "description": "Crispy shrimp, creamy spicy sauce, spicy coleslaw and green onions.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Crustaceans",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Shrimp",
+    "Flour",
+    "Buttermilk",
+    "Egg",
+    "Breadcrumbs",
+    "Orange chili aioli (Mayonnaise (egg), Chili garlic sauce, White miso, Sweet chili sauce, Orange juice, White vinegar)",
+    "Jalapeño slaw (Cabbage, Carrot, Red cabbage, Jalapeño, Basil, Coriander, Spicy mayonnaise (egg, lemon juice), Grain mustard)",
+    "Green onions"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Crustaceans: shrimp. Gluten, egg and milk: the coating. Egg and soy: orange chili aioli. Egg and mustard: jalapeño slaw. Sulphites: listed on the menu. Leaving off the sauce does not remove the egg in the coating.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-14",
+   "name": "Crispy Chicken Dippers",
+   "category": "Starters",
+   "description": "House-breaded chicken tenders with a choice of two dipping sauces.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Chicken tenders",
+    "Flour",
+    "Buttermilk",
+    "Egg",
+    "Breadcrumbs",
+    "Garlic powder",
+    "Cumin",
+    "Salt",
+    "Choice of two dipping sauces (ingredients vary with selection)"
+   ],
+   "modifications": [
+    {
+     "instruction": "The breaded chicken cannot be adapted. Offer a grilled chicken dish instead and check its sauces and sides.",
+     "resolves": [
+      "Egg",
+      "Gluten"
+     ],
+     "remaining": [
+      "Milk",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Gluten, egg and milk: the breading. Mustard, celery and sulphites: listed on the menu. Leaving off the dips does not remove the allergens in the breading.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-15",
+   "name": "Bacon & Cheese Skins",
+   "category": "Starters",
+   "description": "Melted cheese, crispy bacon pieces and sour cream.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The skins are deep fried in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Potato skins",
+    "Cheese",
+    "Bacon",
+    "Sour cream"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the cheese and the sour cream.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": []
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk: cheese and sour cream.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-16",
+   "name": "Legendary Fusion Platter",
+   "category": "Starters",
+   "description": "Chicken tenders, wings, avocado tacos, onion rings and cheesy brie bites.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Sesame",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Chicken tenders",
+    "Chicken wings",
+    "Avocado tacos",
+    "Lettuce",
+    "Lime crema (Sour cream, Lime juice, Lime zest, Cilantro pesto (coriander, vegetable oil, garlic, salt, pepper), Salt)",
+    "Pickled red onion",
+    "Feta",
+    "Onion rings",
+    "Breaded brie"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "The chicken tenders, onion rings and brie bites are coated and contain gluten, egg and milk. Feta and lime crema contain milk. Leaving off one item does not make the platter suitable.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-17",
+   "name": "New York Strip Steak",
+   "category": "Entrées",
+   "description": "12oz steak, herb butter, golden mashed potatoes and fresh vegetables.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Beef steak",
+    "Salt",
+    "Black pepper",
+    "Vegetable oil",
+    "Herb garlic butter (Butter, Lemon juice, Seasoning salt, Paprika, Thyme, Rosemary, Roasted garlic)",
+    "Mashed potatoes (Potato, Butter, Salt, White pepper, Heavy cream)",
+    "Vegetables"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the herb butter and the vegetables, and swap the mash for fries or a side salad with a dairy-free dressing. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": []
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk: herb butter on the steak, mashed potatoes and buttered vegetables.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-18",
+   "name": "Striploin Steak",
+   "category": "Entrées",
+   "description": "7oz steak, herb butter, golden mashed potatoes and fresh vegetables.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Beef steak",
+    "Salt",
+    "Black pepper",
+    "Vegetable oil",
+    "Herb garlic butter (Butter, Lemon juice, Seasoning salt, Paprika, Thyme, Rosemary, Roasted garlic)",
+    "Mashed potatoes (Potato, Butter, Salt, White pepper, Heavy cream)",
+    "Vegetables"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the herb butter and the vegetables, and swap the mash for fries or a side salad with a dairy-free dressing. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": []
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk: herb butter on the steak, mashed potatoes and buttered vegetables.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-19",
+   "name": "Famous Fajitas · Grilled Chicken",
+   "category": "Entrées",
+   "description": "Chicken, cheeses, guacamole, lettuce, corn, pickled onions, tortillas and cilantro lime crema.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Chicken",
+    "Red and green peppers",
+    "Red and yellow onions",
+    "Steak marinade (Vegetable oil, Lime juice, Soy sauce, Cumin, Chili powder, Garlic, Salt, Cayenne pepper)",
+    "Cheese",
+    "Guacamole (Avocado, Onion, Salt, Lime juice, Jalapeño, Coriander)",
+    "Lettuce",
+    "Corn",
+    "Pickled onion",
+    "Flour tortillas",
+    "Lime crema (Sour cream, Lime juice, Lime zest, Cilantro pesto (coriander, vegetable oil, garlic, salt, pepper), Salt)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the cheese and the lime crema.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Soy and gluten: the marinade (soy sauce) on the chicken and vegetables. Gluten: flour tortillas. Milk: cheese and lime crema. Mustard and sulphites: listed on the menu. Leaving off the tortillas does not remove the gluten in the marinade.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-20",
+   "name": "Famous Fajitas · Grilled Steak",
+   "category": "Entrées",
+   "description": "Steak, cheeses, guacamole, lettuce, corn, pickled onions, tortillas and cilantro lime crema.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Steak",
+    "Red and green peppers",
+    "Red and yellow onions",
+    "Steak marinade (Vegetable oil, Lime juice, Soy sauce, Cumin, Chili powder, Garlic, Salt, Cayenne pepper)",
+    "Cheese",
+    "Guacamole (Avocado, Onion, Salt, Lime juice, Jalapeño, Coriander)",
+    "Lettuce",
+    "Corn",
+    "Pickled onion",
+    "Flour tortillas",
+    "Lime crema (Sour cream, Lime juice, Lime zest, Cilantro pesto (coriander, vegetable oil, garlic, salt, pepper), Salt)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the cheese and the lime crema.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Soy and gluten: the marinade (soy sauce) on the steak and vegetables. Gluten: flour tortillas. Milk: cheese and lime crema. Mustard and sulphites: listed on the menu. Leaving off the tortillas does not remove the gluten in the marinade.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-21",
+   "name": "Famous Fajitas · Duo Combo",
+   "category": "Entrées",
+   "description": "Chicken and steak with fajita accompaniments and tortillas.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Chicken",
+    "Steak",
+    "Red and green peppers",
+    "Red and yellow onions",
+    "Steak marinade (Vegetable oil, Lime juice, Soy sauce, Cumin, Chili powder, Garlic, Salt, Cayenne pepper)",
+    "Cheese",
+    "Guacamole (Avocado, Onion, Salt, Lime juice, Jalapeño, Coriander)",
+    "Lettuce",
+    "Corn",
+    "Pickled onion",
+    "Flour tortillas",
+    "Lime crema (Sour cream, Lime juice, Lime zest, Cilantro pesto (coriander, vegetable oil, garlic, salt, pepper), Salt)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the cheese and the lime crema.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Soy and gluten: the marinade (soy sauce) on the chicken, steak and vegetables. Gluten: flour tortillas. Milk: cheese and lime crema. Mustard and sulphites: listed on the menu. Leaving off the tortillas does not remove the gluten in the marinade.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-22",
+   "name": "Veggie Fajitas",
+   "category": "Entrées",
+   "description": "Vegetables, cheeses, guacamole, lettuce, corn, pickled onions, tortillas and cilantro lime crema.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Red and green peppers",
+    "Red and yellow onions",
+    "Edamame",
+    "Steak marinade (Vegetable oil, Lime juice, Soy sauce, Cumin, Chili powder, Garlic, Salt, Cayenne pepper)",
+    "Cheese",
+    "Guacamole (Avocado, Onion, Salt, Lime juice, Jalapeño, Coriander)",
+    "Lettuce",
+    "Corn",
+    "Pickled onion",
+    "Flour tortillas",
+    "Lime crema (Sour cream, Lime juice, Lime zest, Cilantro pesto (coriander, vegetable oil, garlic, salt, pepper), Salt)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the cheese and the lime crema.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the cheese and the lime crema, and confirm the tortillas and cooking oil with the kitchen.",
+     "resolves": [
+      "Vegan"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Soy: edamame and the marinade (soy sauce). Gluten: the marinade and flour tortillas. Milk: cheese and lime crema. Mustard and sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-23",
+   "name": "Mac, Chicken & Cheese",
+   "category": "Entrées",
+   "description": "Grilled chicken, cavatappi pasta, cheese sauce, red peppers and seasoned breadcrumbs.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten"
+   ],
+   "possible": [
+    "Mustard"
+   ],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Chicken",
+    "Cavatappi pasta",
+    "Egg",
+    "Cheese sauce",
+    "Red peppers",
+    "Panko breadcrumbs",
+    "Romano cheese",
+    "Parsley",
+    "Garlic",
+    "Cumin",
+    "Cayenne pepper",
+    "Red pepper flakes",
+    "Herb garlic butter (Butter, Lemon juice, Seasoning salt, Paprika, Thyme, Rosemary, Roasted garlic)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: the mac and cheese base. Gluten: pasta and breadcrumbs. Milk: cheese sauce, Romano and herb butter. Leaving off the toppings does not remove the egg in the base.",
+   "notes": "The mac and cheese base is made with egg, although the printed menu lists only gluten and milk. Treat it as containing egg unless the chef confirms otherwise.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-24",
+   "name": "Baby Back Ribs",
+   "category": "Entrées",
+   "description": "Signature spice blend, house-made barbecue, seasoned fries and coleslaw.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Gluten",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Pork ribs",
+    "Spice blend (Paprika, Brown sugar, Salt, Garlic powder, Celery salt, Chili powder, Black pepper, Onion powder, Oregano, Mustard, Cayenne pepper)",
+    "Barbecue sauce (Ketchup, Brown sugar, Molasses, Apple cider vinegar, Water, Mustard, Smoked paprika, Garlic powder, Cayenne pepper, Salt, Black pepper)",
+    "Seasoned fries",
+    "Coleslaw (Cabbage, Carrot, Mayonnaise (egg), Sugar, Lemon juice, Grain mustard, White vinegar, Celery salt, Black pepper, Salt)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the coleslaw.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Gluten",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg, mustard and celery: coleslaw. Mustard and celery: rib spice blend and barbecue sauce. Sulphites: barbecue sauce. Gluten (barley): listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-25",
+   "name": "Grilled Salmon",
+   "category": "Entrées",
+   "description": "Salmon, sweet and spicy mustard glaze, mashed potatoes and fresh vegetables.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk",
+    "Soy",
+    "Fish",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Salmon",
+    "Mustard glaze (Honey, Sweet chili sauce, Sambal, Dijon mustard, Grain mustard)",
+    "Mashed potatoes (Potato, Butter, Salt, White pepper, Heavy cream)",
+    "Vegetables",
+    "Herb garlic butter (Butter, Lemon juice, Seasoning salt, Paprika, Thyme, Rosemary, Roasted garlic)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the mustard glaze.",
+     "resolves": [
+      "Mustard"
+     ],
+     "remaining": [
+      "Milk",
+      "Soy",
+      "Fish",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the herb butter and the vegetables, and swap the mash for fries or a side salad with a dairy-free dressing. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Soy",
+      "Fish",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Fish: salmon. Mustard: the glaze. Milk: mashed potatoes, herb butter and buttered vegetables. Soy and sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-26",
+   "name": "Crispy Chicken Tender Plate",
+   "category": "Entrées",
+   "description": "Hand-breaded chicken tenders, seasoned fries, honey mustard and barbecue.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Chicken tenders",
+    "Flour",
+    "Buttermilk",
+    "Egg",
+    "Breadcrumbs",
+    "Garlic powder",
+    "Cumin",
+    "Salt",
+    "Seasoned fries",
+    "Honey mustard (Mayonnaise (egg), Apple cider vinegar, Yellow mustard, Vegetable oil, Honey, Cayenne pepper, Garlic salt)",
+    "Barbecue sauce (Ketchup, Brown sugar, Molasses, Apple cider vinegar, Water, Mustard, Smoked paprika, Garlic powder, Cayenne pepper, Salt, Black pepper)"
+   ],
+   "modifications": [
+    {
+     "instruction": "The breaded chicken cannot be adapted. Offer a grilled chicken dish instead and check its sauces and sides.",
+     "resolves": [
+      "Egg",
+      "Gluten"
+     ],
+     "remaining": [
+      "Milk",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Gluten, egg and milk: the breading. Egg and mustard: honey mustard. Mustard, celery and sulphites: barbecue sauce. Leaving off the sauces does not remove the allergens in the breading.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-27",
+   "name": "Fish and Chips",
+   "category": "Entrées",
+   "description": "Battered cod, seasoned fries, tartare sauce, mushy peas and lemon.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Fish",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Cod",
+    "Batter",
+    "Seasoned fries",
+    "Tartare sauce",
+    "Mushy peas",
+    "Lemon"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Fish: cod. Gluten: batter. Egg: tartare sauce. Milk, mustard, celery and sulphites: listed on the menu. The batter recipe is not on file, so leaving off the tartare sauce does not make the dish egg-free.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-28",
+   "name": "Grilled Chicken Caesar Salad",
+   "category": "Bowls & salads",
+   "description": "Grilled chicken, romaine, Caesar dressing, Parmesan crisps, croutons and shaved Parmesan.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Fish",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Chicken",
+    "Romaine lettuce",
+    "Caesar dressing (gluten, Anchovy, Garlic, Mayonnaise (egg), Cream, Parmesan, Lemon juice, Dijon mustard, Worcestershire sauce, Salt, Black pepper, Buttermilk)",
+    "Parmesan crisps",
+    "Croutons (Bun, Butter, Garlic, Romano cheese, Parsley)",
+    "Parmesan"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the Caesar dressing. Any replacement dressing must be confirmed egg-free and fish-free by the kitchen.",
+     "resolves": [
+      "Egg",
+      "Fish"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the croutons and swap the Caesar dressing for ranch. Ranch contains egg, milk and mustard.",
+     "resolves": [
+      "Gluten",
+      "Fish"
+     ],
+     "remaining": [
+      "Egg",
+      "Milk",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the croutons and the Caesar dressing, and serve without dressing. The Parmesan stays, so this does not suit a milk allergy.",
+     "resolves": [
+      "Egg",
+      "Gluten",
+      "Fish"
+     ],
+     "remaining": [
+      "Milk",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "The croutons are made from our burger buns, which used to contain egg. Confirm with the chef that they are made from the current egg-free bun.",
+     "showInSubstitutes": false
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg, milk, fish (anchovy), mustard and gluten: Caesar dressing. Gluten and milk: croutons. Milk: Parmesan and Parmesan crisps. Soy and sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-29",
+   "name": "Grilled Salmon Noodle Bowl",
+   "category": "Bowls & salads",
+   "description": "Salmon, ramen, sesame-soy dressing, greens, edamame, carrots, peppers, cabbage and green onions.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten",
+    "Soy",
+    "Fish",
+    "Sesame",
+    "Sulphites"
+   ],
+   "possible": [
+    "Egg"
+   ],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Salmon",
+    "Ramen noodles",
+    "Sesame-soy dressing (Garlic, Ginger, Soy sauce, Brown sugar, Sesame oil, Rice wine vinegar, Sweet chili sauce, Vegetable oil)",
+    "Mixed greens",
+    "Edamame",
+    "Carrot",
+    "Red peppers",
+    "Cabbage",
+    "Green onions"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Fish: salmon. Soy: edamame and the sesame-soy dressing. Sesame: the dressing. Gluten: ramen noodles and soy sauce. The noodles may contain egg.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-30",
+   "name": "Steak Cobb Salad",
+   "category": "Bowls & salads",
+   "description": "Steak, greens, ranch, tomatoes, avocado, egg, blue cheese, bacon, corn and crispy onions.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Steak",
+    "Mixed greens",
+    "Ranch dressing (Mayonnaise (egg), Sour cream, Buttermilk, Dill, Parsley, Onion powder, Garlic powder, Salt, Black pepper, Lemon juice)",
+    "Tomato",
+    "Avocado",
+    "Egg",
+    "Blue cheese",
+    "Bacon",
+    "Corn",
+    "Crispy onions (Onion, Flour, Cornstarch, Salt, White pepper, Baking powder, Garlic powder, Cayenne pepper, Black pepper)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the boiled egg and the ranch dressing. Any replacement dressing must be confirmed egg-free by the kitchen.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Mustard",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Leave off the blue cheese and the ranch dressing. Any replacement dressing must be confirmed dairy-free by the kitchen.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Gluten",
+      "Mustard",
+      "Celery"
+     ]
+    },
+    {
+     "instruction": "Leave off the crispy onions. Check the steak seasoning with the kitchen.",
+     "resolves": [
+      "Gluten"
+     ],
+     "remaining": [
+      "Egg",
+      "Milk",
+      "Mustard",
+      "Celery"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: boiled egg and ranch dressing. Milk: ranch and blue cheese. Gluten: crispy onions. Mustard and celery: listed on the menu. Leaving off the boiled egg does not remove the egg in the ranch.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-31",
+   "name": "Southwestern Chicken Bowl",
+   "category": "Bowls & salads",
+   "description": "Chicken, quinoa corn salad, pickled pico, beans, red cabbage, greens and ranch.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Chicken",
+    "Quinoa corn salad (Quinoa, Vegetable base, Corn, Green onions, Cumin, Smoked paprika, Oregano, Salt, Vegetable oil, Lime juice)",
+    "Pickled pico (Tomato, Pickled red onion (apple cider vinegar, water, salt), Jalapeño, Salt, Coriander)",
+    "Black beans",
+    "Red cabbage",
+    "Mixed greens",
+    "Ranch dressing (Mayonnaise (egg), Sour cream, Buttermilk, Dill, Parsley, Onion powder, Garlic powder, Salt, Black pepper, Lemon juice)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Ask for the bowl to be made fresh with no ranch, either in the greens or on top. Any replacement dressing must be confirmed by the kitchen.",
+     "resolves": [
+      "Egg",
+      "Milk"
+     ],
+     "remaining": [
+      "Gluten",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg and milk: ranch dressing, which is mixed into the greens and drizzled on top. Gluten (barley), mustard and sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-32",
+   "name": "BBQ Pulled Pork Sandwich",
+   "category": "Sandwiches",
+   "description": "Smoked pork, barbecue, coleslaw, pickles, crispy shoestring onions and artisan bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Pulled pork",
+    "Barbecue sauce (Ketchup, Brown sugar, Molasses, Apple cider vinegar, Water, Mustard, Smoked paprika, Garlic powder, Cayenne pepper, Salt, Black pepper)",
+    "Coleslaw (Cabbage, Carrot, Mayonnaise (egg), Sugar, Lemon juice, Grain mustard, White vinegar, Celery salt, Black pepper, Salt)",
+    "Pickles",
+    "Crispy onions (Onion, Flour, Cornstarch, Salt, White pepper, Baking powder, Garlic powder, Cayenne pepper, Black pepper)",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the coleslaw.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Swap to the gluten-free vegan bun and leave off the crispy onions. Check with the kitchen how the bun is toasted. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Gluten"
+     ],
+     "remaining": [
+      "Egg",
+      "Milk",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": false
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg, mustard and celery: coleslaw. Mustard, celery and sulphites: barbecue sauce. Gluten: bun and crispy onions. Milk: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-33",
+   "name": "Grilled Chicken Sandwich",
+   "category": "Sandwiches",
+   "description": "Chicken, honey mustard, Monterey Jack, bacon, lettuce, tomato and artisan bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Chicken",
+    "Honey mustard (Mayonnaise (egg), Apple cider vinegar, Yellow mustard, Vegetable oil, Honey, Cayenne pepper, Garlic salt)",
+    "Monterey Jack",
+    "Bacon",
+    "Lettuce",
+    "Tomato",
+    "Vegan bun",
+    "Seasoned fries",
+    "Coleslaw (Cabbage, Carrot, Mayonnaise (egg), Sugar, Lemon juice, Grain mustard, White vinegar, Celery salt, Black pepper, Salt)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the Monterey Jack.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Egg",
+      "Gluten",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Swap to the gluten-free vegan bun. Check with the kitchen how the bun is toasted. The fries carry a gluten cross-contact risk.",
+     "resolves": [
+      "Gluten"
+     ],
+     "remaining": [
+      "Egg",
+      "Milk",
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the coleslaw and the honey mustard. Both contain egg and mustard, and the coleslaw also contains celery.",
+     "resolves": [
+      "Egg",
+      "Mustard",
+      "Celery"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": false
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg and mustard: honey mustard and coleslaw. Celery: coleslaw. Milk: Monterey Jack. Gluten: bun. Sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-34",
+   "name": "Messi Chicken Sandwich",
+   "category": "Sandwiches",
+   "description": "Milanese-style crispy chicken, provolone, herb aioli, tomato, arugula and bun.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "Served with seasoned fries. The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Chicken",
+    "Flour",
+    "Egg",
+    "Chicken breading (Panko breadcrumbs, Flour, Cayenne pepper, Chili powder, Paprika, Black pepper, Salt, Onion powder, Garlic powder)",
+    "Provolone",
+    "Herb aioli (Mayonnaise (egg), Parsley, Basil, Rosemary, Thyme, Green onions, House ranch seasoning (onion, garlic, black pepper, coriander, thyme, oregano, salt), Salt, Black pepper)",
+    "Tomato",
+    "Arugula",
+    "Vegan bun",
+    "Seasoned fries"
+   ],
+   "modifications": [
+    {
+     "instruction": "Ask whether the kitchen can use plain grilled chicken instead of the breaded chicken, and leave off the herb aioli.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Mustard"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "Our burger buns used to contain egg. Confirm with the chef that the current egg-free vegan bun is being used.",
+     "showInSubstitutes": false
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Gluten and egg: the breaded chicken. Egg and mustard: herb aioli. Milk: provolone. Gluten: bun. Leaving off the aioli or changing the bun does not remove the allergens in the chicken.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-35",
+   "name": "Seasoned Fries",
+   "category": "Sides",
+   "description": "Potato fries seasoned with salt and pepper.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Potato fries",
+    "Salt",
+    "Black pepper"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-36",
+   "name": "Guinness Cheese & Bacon Fries",
+   "category": "Sides",
+   "description": "Fries with Guinness cheese and bacon.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk",
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Potato fries",
+    "Guinness cheese sauce",
+    "Bacon",
+    "Salt",
+    "Black pepper"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the Guinness cheese sauce.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Gluten"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk and gluten (barley): Guinness cheese sauce.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "side-loaded-fries",
+   "name": "Loaded Cheese & Bacon Fries (upgrade)",
+   "category": "Sides",
+   "description": "Fries upgraded with cheese and bacon.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [
+    "Gluten"
+   ],
+   "crossContactNote": "The fries are cooked in their own fryer, but it sits next to the fryers used for breaded and battered food, so gluten cross-contact is possible.",
+   "ingredients": [
+    "Seasoned fries",
+    "Cheese",
+    "Bacon"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk: cheese.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-37",
+   "name": "Golden Onion Rings",
+   "category": "Sides",
+   "description": "Golden onion rings.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Mustard",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Onion",
+    "Coating (wheat, egg, milk)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Gluten, egg and milk: the coating. Mustard and celery: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-38",
+   "name": "Mac & Cheese",
+   "category": "Sides",
+   "description": "Macaroni and cheese.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten"
+   ],
+   "possible": [
+    "Mustard"
+   ],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Cavatappi pasta",
+    "Egg",
+    "Cheese sauce",
+    "Panko breadcrumbs",
+    "Romano cheese",
+    "Parsley",
+    "Garlic",
+    "Cumin",
+    "Cayenne pepper",
+    "Red pepper flakes",
+    "Herb garlic butter (Butter, Lemon juice, Seasoning salt, Paprika, Thyme, Rosemary, Roasted garlic)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: the mac and cheese base. Gluten: pasta and breadcrumbs. Milk: cheese sauce, Romano and herb butter. Leaving off the toppings does not remove the egg in the base.",
+   "notes": "The mac and cheese base is made with egg, although the printed menu lists only gluten and milk. Treat it as containing egg unless the chef confirms otherwise.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-39",
+   "name": "Market Vegetables",
+   "category": "Sides",
+   "description": "Market vegetables.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Vegetables",
+    "Herb garlic butter (Butter, Lemon juice, Seasoning salt, Paprika, Thyme, Rosemary, Roasted garlic)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk: herb garlic butter.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-40",
+   "name": "Mashed Potatoes",
+   "category": "Sides",
+   "description": "Golden mashed potatoes.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Mashed potatoes (Potato, Butter, Salt, White pepper, Heavy cream)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap the mash for another side that the kitchen confirms is dairy-free.",
+     "resolves": [
+      "Milk",
+      "Vegan"
+     ],
+     "remaining": []
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [
+    "Vegan"
+   ],
+   "evidence": "Milk: butter and cream, mixed through the mash.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-41",
+   "name": "Side Caesar Salad",
+   "category": "Sides",
+   "description": "Classic Caesar side salad.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy",
+    "Fish",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Romaine lettuce",
+    "Caesar dressing (gluten, Anchovy, Garlic, Mayonnaise (egg), Cream, Parmesan, Lemon juice, Dijon mustard, Worcestershire sauce, Salt, Black pepper, Buttermilk)",
+    "Parmesan",
+    "Croutons (Bun, Butter, Garlic, Romano cheese, Parsley)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Leave off the Caesar dressing. Any replacement dressing must be confirmed egg-free and fish-free by the kitchen.",
+     "resolves": [
+      "Egg",
+      "Fish"
+     ],
+     "remaining": [
+      "Milk",
+      "Gluten",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the croutons and swap the Caesar dressing for ranch. Ranch contains egg, milk and mustard.",
+     "resolves": [
+      "Gluten",
+      "Fish"
+     ],
+     "remaining": [
+      "Egg",
+      "Milk",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    },
+    {
+     "instruction": "Leave off the croutons and the Caesar dressing, and serve without dressing. The Parmesan stays, so this does not suit a milk allergy.",
+     "resolves": [
+      "Egg",
+      "Gluten",
+      "Fish"
+     ],
+     "remaining": [
+      "Milk",
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [
+    {
+     "allergens": [
+      "Egg"
+     ],
+     "note": "The croutons are made from our burger buns, which used to contain egg. Confirm with the chef that they are made from the current egg-free bun.",
+     "showInSubstitutes": false
+    }
+   ],
+   "noChangesFor": [],
+   "evidence": "Egg, milk, fish (anchovy), mustard and gluten: Caesar dressing. Gluten and milk: croutons. Milk: Parmesan. Soy and sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-42",
+   "name": "Side House Salad",
+   "category": "Sides",
+   "description": "House side salad.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Mustard"
+   ],
+   "possible": [
+    "Gluten"
+   ],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Mixed salad leaves",
+    "Choice of dressing (ingredients vary with selection)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Serve without dressing or croutons. Any dressing must be confirmed by the kitchen.",
+     "resolves": [
+      "Egg",
+      "Milk",
+      "Gluten"
+     ],
+     "remaining": [
+      "Mustard"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg, milk and mustard: the dressing, which varies with the guest's choice. Croutons, if added, contain gluten and milk.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "addon-half-rack-ribs",
+   "name": "Half Rack of Ribs (add-on)",
+   "category": "Add-ons",
+   "description": "Half rack of baby back ribs added to an entrée.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Baby back ribs",
+    "Signature spice blend",
+    "House-made barbecue sauce"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Mustard and celery: rib spice blend and barbecue sauce. Sulphites: barbecue sauce.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "addon-queso",
+   "name": "Queso (add-on)",
+   "category": "Add-ons",
+   "description": "Queso added to fajitas.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk",
+    "Mustard"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Queso cheese sauce"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk: cheese and cream. Mustard: grain mustard.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "addon-guacamole",
+   "name": "Guacamole (add-on)",
+   "category": "Add-ons",
+   "description": "Guacamole added to nachos.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Avocado",
+    "Onion",
+    "Lime juice",
+    "Jalapeño",
+    "Cilantro",
+    "Salt"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-43",
+   "name": "Legendary Sauce",
+   "category": "Sauces",
+   "description": "French fry dip.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Mustard",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Legendary Sauce (Mayonnaise (egg), Ketchup, Mustard, Paprika, Black pepper, Garlic powder, Salt)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap for the vegan garlic aioli. It is egg-free but contains mustard.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Mustard",
+      "Celery"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: mayonnaise. Mustard: mustard. Celery: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-44",
+   "name": "Spicy Mayo",
+   "category": "Sauces",
+   "description": "French fry dip.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Soy",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Spicy mayonnaise (Mayonnaise (egg), Parsley, Green onions, Sriracha, Hot sauce, Red pepper flakes, Lemon juice, Salt, Black pepper)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap for the vegan garlic aioli. It is egg-free but contains mustard.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Soy",
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: mayonnaise. Soy, mustard and sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-45",
+   "name": "Dijonnaise",
+   "category": "Sauces",
+   "description": "French fry dip.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Mustard",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Dijonnaise (full composition not recorded)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap for the vegan garlic aioli. It is egg-free but contains mustard.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Mustard",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg, mustard and sulphites: listed on the menu. The full recipe is not on file.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-46",
+   "name": "Herb Aioli",
+   "category": "Sauces",
+   "description": "French fry dip.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Mustard"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Herb aioli (Mayonnaise (egg), Parsley, Basil, Rosemary, Thyme, Green onions, House ranch seasoning (onion, garlic, black pepper, coriander, thyme, oregano, salt), Salt, Black pepper)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap for the vegan garlic aioli. It is egg-free but contains mustard.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Mustard"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: mayonnaise. Mustard: listed on the menu.",
+   "notes": "The ranch seasoning in this aioli is a dry spice mix and contains no milk.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-47",
+   "name": "Ranch Dressing",
+   "category": "Sauces",
+   "description": "French fry dip.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Mustard"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Ranch dressing (Mayonnaise (egg), Sour cream, Buttermilk, Dill, Parsley, Onion powder, Garlic powder, Salt, Black pepper, Lemon juice)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap for the vegan garlic aioli. It is egg-free and dairy-free but contains mustard.",
+     "resolves": [
+      "Egg",
+      "Milk"
+     ],
+     "remaining": [
+      "Mustard"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: mayonnaise. Milk: sour cream and buttermilk. Mustard: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-48",
+   "name": "Buffalo Sauce",
+   "category": "Sauces",
+   "description": "French fry dip.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Buffalo sauce (Hot sauce, Butter or butter alternative, Garlic powder)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap for the barbecue sauce. Note that it contains celery, mustard and sulphites.",
+     "resolves": [
+      "Milk"
+     ],
+     "remaining": [
+      "Mustard",
+      "Celery",
+      "Sulphites"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk: listed on the menu (butter in the sauce).",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-49",
+   "name": "Barbecue Sauce",
+   "category": "Sauces",
+   "description": "French fry dip.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Mustard",
+    "Celery",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Barbecue sauce (Ketchup, Brown sugar, Molasses, Apple cider vinegar, Water, Mustard, Smoked paprika, Garlic powder, Cayenne pepper, Salt, Black pepper)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Mustard, celery and sulphites: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-50",
+   "name": "Garlic Aioli",
+   "category": "Sauces",
+   "description": "French fry dip.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Garlic aioli (Mayonnaise (egg), Garlic, Lemon juice, Lemon zest, Salt, Black pepper)"
+   ],
+   "modifications": [
+    {
+     "instruction": "Swap for the vegan garlic aioli. It is egg-free but contains mustard.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": [
+      "Mustard"
+     ]
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: mayonnaise.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-51",
+   "name": "Vegan Garlic Aioli",
+   "category": "Sauces",
+   "description": "Vegan garlic aioli; mustard listed.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Mustard"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Vegan garlic aioli (mustard",
+    "full composition not recorded)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Mustard: listed on the menu. The full recipe is not on file.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-52",
+   "name": "New York Cheesecake",
+   "category": "Desserts",
+   "description": "Cheesecake, strawberry sauce and whipped cream.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Cream cheese",
+    "Egg",
+    "Crust",
+    "Strawberry sauce",
+    "Whipped cream"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg and milk: the filling. Gluten: the crust. Milk: whipped cream. Soy: listed on the menu. Leaving off the cream or the crust does not remove the egg and milk in the filling.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-53",
+   "name": "Ice Cream",
+   "category": "Desserts",
+   "description": "Chocolate, strawberry and vanilla.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Soy"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Ice cream (chocolate, strawberry or vanilla",
+    "milk, egg and soy recorded)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Milk, egg and soy are listed for all three flavours. Shared scoops can carry allergens from one flavour to another.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-54",
+   "name": "Hot Fudge Brownie",
+   "category": "Desserts",
+   "description": "Brownie, vanilla ice cream, hot fudge, chocolate sprinkles, whipped cream and cherry.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Brownie (sugar, vanilla, salt, butter, cocoa, flour, egg)",
+    "Vanilla ice cream",
+    "Hot fudge (Heavy cream, Condensed milk, Golden syrup, Brown sugar, Cocoa, Salt, Chocolate chips, Butter, Vanilla)",
+    "Chocolate sprinkles",
+    "Whipped cream",
+    "Cherry"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg, milk and gluten: the brownie. Milk: hot fudge, ice cream and whipped cream. Egg: ice cream. Soy: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-55",
+   "name": "Seasonal Fruit Cobbler",
+   "category": "Desserts",
+   "description": "Fruit cobbler, vanilla ice cream and caramel sauce.",
+   "vegan": false,
+   "vegetarian": true,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Soy"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Seasonal fruit",
+    "Flour",
+    "Egg",
+    "Sour cream",
+    "Sugar",
+    "Butter",
+    "Vanilla",
+    "Cinnamon",
+    "Salt",
+    "Vanilla ice cream",
+    "Caramel sauce (Sugar, Butter, Heavy cream, Lemon juice, Vanilla)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg, milk and gluten: baked into the cobbler. Milk: ice cream and caramel sauce. Soy: listed on the menu. Leaving off the ice cream does not remove these allergens.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "source-56",
+   "name": "Yuzu Lychee Martini",
+   "category": "Cocktails",
+   "description": "Vodka, yuzu, lychee purée, fresh lemon and egg whites.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Absolut vodka",
+    "Yuzu",
+    "Lychee purée",
+    "Lemon juice",
+    "Egg whites",
+    "Lemon peel garnish",
+    "Mint garnish"
+   ],
+   "modifications": [
+    {
+     "instruction": "Ask the bartender whether the drink can be made without egg white. Any alternative foamer needs a current allergen-label check.",
+     "resolves": [
+      "Egg"
+     ],
+     "remaining": []
+    }
+   ],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Egg: egg white, shaken into the drink.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-coconut-pomegranate-mezarita",
+   "name": "Coconut Pomegranate Mezarita",
+   "category": "Cocktails",
+   "description": "Jose Cuervo Silver tequila, Mezcal, Lime juice, Crème of coconut, Pomegranate, Grenadine.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Jose Cuervo Silver tequila",
+    "Mezcal",
+    "Lime juice",
+    "Crème of coconut",
+    "Pomegranate",
+    "Grenadine"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-jalape-o-peach-mezarita",
+   "name": "Jalapeño Peach Mezarita",
+   "category": "Cocktails",
+   "description": "Jose Cuervo Silver tequila, Mezcal, Peach purée, Lime juice, Agave nectar, Jalapeño.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [
+    "Mustard",
+    "Celery"
+   ],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Jose Cuervo Silver tequila",
+    "Mezcal",
+    "Peach purée",
+    "Lime juice",
+    "Agave nectar",
+    "Jalapeño",
+    "Lime garnish",
+    "Citrus spice rim"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "Celery and mustard come only from the citrus spice rim. Ask the bar whether the rim is used; without it, the menu lists no allergens for this drink.",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-paloma",
+   "name": "Paloma",
+   "category": "Cocktails",
+   "description": "Jose Cuervo Silver tequila, Lime juice, Grapefruit juice, Agave syrup, Club soda, Lime garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Jose Cuervo Silver tequila",
+    "Lime juice",
+    "Grapefruit juice",
+    "Agave syrup",
+    "Club soda",
+    "Lime garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-espresso-martini",
+   "name": "Espresso Martini",
+   "category": "Cocktails",
+   "description": "Grey Goose vodka, Espresso, Kahlúa, Simple syrup, Coffee bean garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Grey Goose vodka",
+    "Espresso",
+    "Kahlúa",
+    "Simple syrup",
+    "Coffee bean garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-lucky-penny",
+   "name": "Lucky Penny",
+   "category": "Cocktails",
+   "description": "Jack Daniels, Lemon juice, Honey syrup, Lemon peel garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Jack Daniels",
+    "Lemon juice",
+    "Honey syrup",
+    "Lemon peel garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-bourbon-apple-mule",
+   "name": "Bourbon Apple Mule",
+   "category": "Cocktails",
+   "description": "Jack Daniels, Granny Smith apple, Apple juice, Simple syrup, Ginger beer, Mint.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Jack Daniels",
+    "Granny Smith apple",
+    "Apple juice",
+    "Simple syrup",
+    "Ginger beer",
+    "Mint"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-blackberry-sparkling-sangria",
+   "name": "Blackberry Sparkling Sangria",
+   "category": "Cocktails",
+   "description": "Red wine, Blackberries, Blackberry syrup, Cranberry juice, Orange, Sparkling wine.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Red wine",
+    "Blackberries",
+    "Blackberry syrup",
+    "Cranberry juice",
+    "Orange",
+    "Sparkling wine"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-smoked-old-fashioned",
+   "name": "Smoked Old Fashioned",
+   "category": "Cocktails",
+   "description": "Jack Daniels, Brown sugar syrup, Cherry bitters, Cherry, Orange peel garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Jack Daniels",
+    "Brown sugar syrup",
+    "Cherry bitters",
+    "Cherry",
+    "Orange peel garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-strawberry-daiquiri",
+   "name": "Strawberry Daiquiri",
+   "category": "Cocktails",
+   "description": "Bacardi Superior rum, Strawberry purée, Lime juice, Strawberry garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Bacardi Superior rum",
+    "Strawberry purée",
+    "Lime juice",
+    "Strawberry garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-sex-on-the-beach",
+   "name": "Sex on the Beach",
+   "category": "Cocktails",
+   "description": "Absolut vodka, Archer’s peach schnapps, Cranberry juice, Orange juice.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Absolut vodka",
+    "Archer’s peach schnapps",
+    "Cranberry juice",
+    "Orange juice"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-strawberry-basil-lemonade",
+   "name": "Strawberry Basil Lemonade",
+   "category": "Zero-proof cocktails",
+   "description": "Lemonade, Lemon, Strawberries, Agave nectar, Basil, Sweet & sour mix.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Lemonade",
+    "Lemon",
+    "Strawberries",
+    "Agave nectar",
+    "Basil",
+    "Sweet & sour mix"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-mango-tango",
+   "name": "Mango Tango",
+   "category": "Zero-proof cocktails",
+   "description": "Red Bull, Mango purée, Orange juice, Orange garnish, Cherry garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Red Bull",
+    "Mango purée",
+    "Orange juice",
+    "Orange garnish",
+    "Cherry garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-mango-berry-cooler",
+   "name": "Mango Berry Cooler",
+   "category": "Zero-proof cocktails",
+   "description": "Mango purée, Strawberry, Pineapple juice, Orange juice, Sweet & sour mix, 7Up Free.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Mango purée",
+    "Strawberry",
+    "Pineapple juice",
+    "Orange juice",
+    "Sweet & sour mix",
+    "7Up Free"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-chilli-pineapple",
+   "name": "Chilli Pineapple",
+   "category": "Zero-proof cocktails",
+   "description": "Pineapple, Lime juice, Simple syrup, Jalapeño, Fever-Tree elderflower tonic.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Pineapple",
+    "Lime juice",
+    "Simple syrup",
+    "Jalapeño",
+    "Fever-Tree elderflower tonic"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-cucumber-lime-press",
+   "name": "Cucumber Lime Press",
+   "category": "Zero-proof cocktails",
+   "description": "Lime, Mint, Simple syrup, Cucumber, Fever-Tree elderflower tonic.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Lime",
+    "Mint",
+    "Simple syrup",
+    "Cucumber",
+    "Fever-Tree elderflower tonic"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-passion-fruit-mai-tai",
+   "name": "Passion Fruit Mai Tai",
+   "category": "Cocktails",
+   "description": "Captain Morgan spiced rum, Bacardi Añejo Cuatro rum, Passion fruit, Almond syrup, Lime juice, Angostura bitters.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Tree nuts",
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Captain Morgan spiced rum",
+    "Bacardi Añejo Cuatro rum",
+    "Passion fruit",
+    "Almond syrup",
+    "Lime juice",
+    "Angostura bitters",
+    "Pineapple garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Tree nuts: almond syrup.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-tiki-royale",
+   "name": "Tiki Royale",
+   "category": "Cocktails",
+   "description": "Bombay Sapphire gin, Jose Cuervo Silver tequila, Pineapple juice, Lemon juice, Simple syrup, Pineapple garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Bombay Sapphire gin",
+    "Jose Cuervo Silver tequila",
+    "Pineapple juice",
+    "Lemon juice",
+    "Simple syrup",
+    "Pineapple garnish",
+    "Cherry garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-zombie",
+   "name": "Zombie",
+   "category": "Cocktails",
+   "description": "Bacardi Superior rum, Bacardi Añejo Cuatro rum, Lime juice, Pineapple juice, Passion fruit purée, Angostura bitters.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Bacardi Superior rum",
+    "Bacardi Añejo Cuatro rum",
+    "Lime juice",
+    "Pineapple juice",
+    "Passion fruit purée",
+    "Angostura bitters",
+    "Grenadine",
+    "Mint garnish",
+    "Cherry garnish",
+    "Orange garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-margarita-rita",
+   "name": "Margarita Rita",
+   "category": "Cocktails",
+   "description": "Jose Cuervo Silver tequila, Lime juice, Agave nectar, Citrus spice rim, Lime garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Mustard",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Jose Cuervo Silver tequila",
+    "Lime juice",
+    "Agave nectar",
+    "Citrus spice rim",
+    "Lime garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Mustard and celery: the citrus spice rim.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-pineapple-coconut-mojito",
+   "name": "Pineapple Coconut Mojito",
+   "category": "Cocktails",
+   "description": "Bacardi Superior rum, Lime, Mint, Crème of coconut, Pineapple, Pineapple juice.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Bacardi Superior rum",
+    "Lime",
+    "Mint",
+    "Crème of coconut",
+    "Pineapple",
+    "Pineapple juice",
+    "Soda water"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-classic-caribbean-mojito",
+   "name": "Classic Caribbean Mojito",
+   "category": "Cocktails",
+   "description": "Bacardi Superior rum, Mint, Lime, Simple syrup, Soda water, Bacardi Añejo Cuatro rum.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Bacardi Superior rum",
+    "Mint",
+    "Lime",
+    "Simple syrup",
+    "Soda water",
+    "Bacardi Añejo Cuatro rum"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-tropical-margarita",
+   "name": "Tropical Margarita",
+   "category": "Cocktails",
+   "description": "Jose Cuervo Silver tequila, Strawberries, Orange liqueur, Pomegranate, Pineapple juice, Lime juice.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Jose Cuervo Silver tequila",
+    "Strawberries",
+    "Orange liqueur",
+    "Pomegranate",
+    "Pineapple juice",
+    "Lime juice"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-ultimate-long-island-iced-tea",
+   "name": "Ultimate Long Island Iced Tea",
+   "category": "Cocktails",
+   "description": "Absolut vodka, Bombay Sapphire gin, Captain Morgan spiced rum, Cointreau orange liqueur, Sweet & sour mix, Pepsi.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Absolut vodka",
+    "Bombay Sapphire gin",
+    "Captain Morgan spiced rum",
+    "Cointreau orange liqueur",
+    "Sweet & sour mix",
+    "Pepsi",
+    "Lemon garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-electric-blues",
+   "name": "Electric Blues",
+   "category": "Cocktails",
+   "description": "Absolut vodka, Bacardi Superior rum, Bombay Sapphire gin, Blue curaçao, Sweet & sour mix, Red Bull.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Absolut vodka",
+    "Bacardi Superior rum",
+    "Bombay Sapphire gin",
+    "Blue curaçao",
+    "Sweet & sour mix",
+    "Red Bull",
+    "Lemon garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-bahama-mama",
+   "name": "Bahama Mama",
+   "category": "Cocktails",
+   "description": "Bacardi Superior rum, Malibu coconut rum, Grenadine, Crème de banana, Pineapple juice, Orange juice.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Bacardi Superior rum",
+    "Malibu coconut rum",
+    "Grenadine",
+    "Crème de banana",
+    "Pineapple juice",
+    "Orange juice",
+    "Orange garnish",
+    "Cherry garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-hard-rock-bloody-mary",
+   "name": "Hard Rock Bloody Mary",
+   "category": "Cocktails",
+   "description": "Absolut vodka, Bloody Mary blend (tomato juice, lemon juice, pickle juice, black pepper, celery salt, hot sauce, Worcestershire sauce), Blue cheese olives, Bacon, Celery, Lime garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Fish",
+    "Mustard",
+    "Celery"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Absolut vodka",
+    "Bloody Mary blend (tomato juice, lemon juice, pickle juice, black pepper, celery salt, hot sauce, Worcestershire sauce)",
+    "Blue cheese olives",
+    "Bacon",
+    "Celery",
+    "Lime garnish",
+    "Citrus spice rim"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Celery: celery salt and the celery stick. Fish: Worcestershire sauce. Milk: blue cheese olives. Mustard and celery: the citrus spice rim. Gluten and egg: listed on the menu.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-hurricane",
+   "name": "Hurricane",
+   "category": "Cocktails",
+   "description": "Bacardi Superior rum, Orange juice, Pineapple juice, Mango purée, Grenadine, Disaronno.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [
+    "Tree nuts"
+   ],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Bacardi Superior rum",
+    "Orange juice",
+    "Pineapple juice",
+    "Mango purée",
+    "Grenadine",
+    "Disaronno",
+    "Bacardi Añejo Cuatro rum",
+    "Orange garnish",
+    "Cherry garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Disaronno is an almond-flavoured liqueur, so tree nuts are listed as may contain.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-aperol-spritz",
+   "name": "Aperol Spritz",
+   "category": "Cocktails",
+   "description": "Aperol, Prosecco, Soda water, Orange garnish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Aperol",
+    "Prosecco",
+    "Soda water",
+    "Orange garnish"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-hugo-spritz",
+   "name": "Hugo Spritz",
+   "category": "Cocktails",
+   "description": "Hugo Spritz.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Hugo Spritz (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "recipe-caesar-dressing",
+   "name": "Caesar Dressing",
+   "category": "Sauces",
+   "description": "Caesar salad dressing.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Egg",
+    "Milk",
+    "Gluten",
+    "Fish",
+    "Mustard"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Caesar dressing (gluten, Anchovy, Garlic, Mayonnaise (egg), Cream, Parmesan, Lemon juice, Dijon mustard, Worcestershire sauce, Salt, Black pepper, Buttermilk)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "Fish: anchovy and Worcestershire sauce. Egg: mayonnaise. Milk: cream, Parmesan and buttermilk. Mustard: Dijon mustard. Gluten: listed in the recipe.",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-guinness",
+   "name": "Guinness",
+   "category": "Draught beer",
+   "description": "Guinness.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Guinness (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-beamish",
+   "name": "Beamish",
+   "category": "Draught beer",
+   "description": "Beamish.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Beamish (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-heineken",
+   "name": "Heineken",
+   "category": "Draught beer",
+   "description": "Heineken.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Heineken (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-birra-moretti",
+   "name": "Birra Moretti",
+   "category": "Draught beer",
+   "description": "Birra Moretti.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Birra Moretti (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-beavertown-neck-oil",
+   "name": "Beavertown Neck Oil",
+   "category": "Draught beer",
+   "description": "Beavertown Neck Oil.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Beavertown Neck Oil (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-smithwicks",
+   "name": "Smithwicks",
+   "category": "Draught beer",
+   "description": "Smithwicks.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Smithwicks (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-coors-light",
+   "name": "Coors Light",
+   "category": "Draught beer",
+   "description": "Coors Light.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Coors Light (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-hop-house-13",
+   "name": "Hop House 13",
+   "category": "Draught beer",
+   "description": "Hop House 13.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Hop House 13 (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-rockshore",
+   "name": "Rockshore",
+   "category": "Draught beer",
+   "description": "Rockshore.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Rockshore (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-bulmers-cider",
+   "name": "Bulmers Cider",
+   "category": "Draught beer",
+   "description": "Bulmers Cider.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Bulmers Cider (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-orchard-thieves-cider",
+   "name": "Orchard Thieves Cider",
+   "category": "Draught beer",
+   "description": "Orchard Thieves Cider.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Orchard Thieves Cider (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-corona",
+   "name": "Corona",
+   "category": "Bottled beer & seltzers",
+   "description": "Corona.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Corona (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-budweiser",
+   "name": "Budweiser",
+   "category": "Bottled beer & seltzers",
+   "description": "Budweiser.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Budweiser (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-heineken-0-0",
+   "name": "Heineken 0.0",
+   "category": "Bottled beer & seltzers",
+   "description": "Heineken 0.0.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Heineken 0.0 (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-peroni",
+   "name": "Peroni",
+   "category": "Bottled beer & seltzers",
+   "description": "Peroni.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Gluten"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Peroni (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-kopparberg",
+   "name": "Kopparberg",
+   "category": "Bottled beer & seltzers",
+   "description": "Kopparberg.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Kopparberg (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-smirnoff-ice",
+   "name": "Smirnoff Ice",
+   "category": "Bottled beer & seltzers",
+   "description": "Smirnoff Ice.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Smirnoff Ice (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-white-claw-raspberry",
+   "name": "White Claw Raspberry",
+   "category": "Bottled beer & seltzers",
+   "description": "White Claw Raspberry.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "White Claw Raspberry (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-white-claw-natural-lime",
+   "name": "White Claw Natural Lime",
+   "category": "Bottled beer & seltzers",
+   "description": "White Claw Natural Lime.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "White Claw Natural Lime (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-white-claw-black-cherry",
+   "name": "White Claw Black Cherry",
+   "category": "Bottled beer & seltzers",
+   "description": "White Claw Black Cherry.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "White Claw Black Cherry (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-la-serre-sauvignon-blanc",
+   "name": "La Serre Sauvignon Blanc",
+   "category": "Wine",
+   "description": "La Serre Sauvignon Blanc.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "La Serre Sauvignon Blanc (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-trulli-pinot-grigio",
+   "name": "Trulli Pinot Grigio",
+   "category": "Wine",
+   "description": "Trulli Pinot Grigio.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Trulli Pinot Grigio (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-drifting-chardonnay",
+   "name": "Drifting Chardonnay",
+   "category": "Wine",
+   "description": "Drifting Chardonnay.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Drifting Chardonnay (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-stoneleigh-sauvignon-blanc",
+   "name": "Stoneleigh Sauvignon Blanc",
+   "category": "Wine",
+   "description": "Stoneleigh Sauvignon Blanc.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Stoneleigh Sauvignon Blanc (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-fortant-de-merlot",
+   "name": "Fortant de Merlot",
+   "category": "Wine",
+   "description": "Fortant de Merlot.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Fortant de Merlot (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-the-paddock-shiraz",
+   "name": "The Paddock Shiraz",
+   "category": "Wine",
+   "description": "The Paddock Shiraz.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "The Paddock Shiraz (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-drifting-cabernet-sauvignon",
+   "name": "Drifting Cabernet Sauvignon",
+   "category": "Wine",
+   "description": "Drifting Cabernet Sauvignon.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Drifting Cabernet Sauvignon (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-ramon-bilbao-rosado",
+   "name": "Ramon Bilbao Rosado",
+   "category": "Wine",
+   "description": "Ramon Bilbao Rosado.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Ramon Bilbao Rosado (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-machio-dei-cavalieri-prosecco",
+   "name": "Machio Dei Cavalieri Prosecco",
+   "category": "Wine",
+   "description": "Machio Dei Cavalieri Prosecco.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Machio Dei Cavalieri Prosecco (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-moet-and-chandon",
+   "name": "Moet & Chandon",
+   "category": "Wine",
+   "description": "Moet & Chandon.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Moet & Chandon (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-pepsi",
+   "name": "Pepsi",
+   "category": "Soft drinks & coffee",
+   "description": "Pepsi.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Pepsi (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-pepsi-max",
+   "name": "Pepsi Max",
+   "category": "Soft drinks & coffee",
+   "description": "Pepsi Max.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Pepsi Max (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-7up-free",
+   "name": "7Up Free",
+   "category": "Soft drinks & coffee",
+   "description": "7Up Free.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "7Up Free (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-club-orange-zero",
+   "name": "Club Orange Zero",
+   "category": "Soft drinks & coffee",
+   "description": "Club Orange Zero.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Sulphites"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Club Orange Zero (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-ballygowan-water",
+   "name": "Ballygowan Water",
+   "category": "Soft drinks & coffee",
+   "description": "Ballygowan Water.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Ballygowan Water (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-juice",
+   "name": "Juice",
+   "category": "Soft drinks & coffee",
+   "description": "Juice.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Juice (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-red-bull",
+   "name": "Red Bull",
+   "category": "Soft drinks & coffee",
+   "description": "Red Bull.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Red Bull (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-espresso",
+   "name": "Espresso",
+   "category": "Soft drinks & coffee",
+   "description": "Espresso.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Espresso (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-americano",
+   "name": "Americano",
+   "category": "Soft drinks & coffee",
+   "description": "Americano.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Americano (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-cappuccino",
+   "name": "Cappuccino",
+   "category": "Soft drinks & coffee",
+   "description": "Cappuccino.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Cappuccino (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-latte",
+   "name": "Latte",
+   "category": "Soft drinks & coffee",
+   "description": "Latte.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [
+    "Milk"
+   ],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Latte (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  },
+  {
+   "id": "drink-tea",
+   "name": "Tea",
+   "category": "Soft drinks & coffee",
+   "description": "Tea.",
+   "vegan": false,
+   "vegetarian": false,
+   "contains": [],
+   "possible": [],
+   "crossContact": [],
+   "crossContactNote": "",
+   "ingredients": [
+    "Tea (as supplied)"
+   ],
+   "modifications": [],
+   "chefChecks": [],
+   "noChangesFor": [],
+   "evidence": "",
+   "notes": "",
+   "archived": false,
+   "confirmedFree": []
+  }
+ ]
+}

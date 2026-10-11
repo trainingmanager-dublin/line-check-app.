@@ -1,0 +1,12 @@
+# Netlify: deploys from GitHub. See README "Netlify setup".
+[build]
+  publish = "Allergen-App"
+  # The allergen safety tests must pass or the deploy is cancelled.
+  command = "npm test"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
