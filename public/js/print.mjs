@@ -2,24 +2,15 @@
  * Printouts laid out like the paper templates:
  *   - Line Check Sheet (Item | Temp | Shelf Life | Utensil | Quality Identifiers | AM | COMMENT | PM | COMMENT)
  *   - Temperature Checklist (fridges by time of day, hot holding, fryers, grill, flat top)
+ *   - Photos (when any were taken)
+ * Each shift's sign-off (name, time, signature) is on both sheets.
  */
 import { h } from "./dom.mjs";
-import {
-  normLine, fieldValue, lineKey, signKey, tempKey, judgeTemp, dishBad, FRIDGE_SLOTS, HOT_SLOTS, prettyDate,
-} from "./core.mjs";
+import * as C from "./core.mjs";
+import { sigSvg } from "./signature.mjs";
 
+const { normLine, fieldValue, lineKey, tempKey, judgeTemp, FRIDGE_SLOTS, HOT_SLOTS, prettyDate, slashDate, timeOf } = C;
 const LOGO = "img/hard-rock-logo-dark.png";
-
-function slashDate(date) {
-  const [y, m, d] = date.split("-");
-  return d + "/" + m + "/" + y;
-}
-
-function timeOf(iso) {
-  if (!iso) return "";
-  const d = new Date(iso);
-  return isNaN(d) ? "" : d.toLocaleTimeString("en-IE", { hour: "2-digit", minute: "2-digit" });
-}
 
 function lineMark(v, item) {
   v = normLine(v);
@@ -31,9 +22,21 @@ function lineMark(v, item) {
   return parts;
 }
 
+function signCell(record, shift) {
+  const s = C.signedBy(record, shift);
+  if (!s) return h("div", { class: "p-sign empty", text: "Not signed off" });
+  return h("div", { class: "p-sign" },
+    s.sig ? sigSvg(s.sig, "p-sig") : null,
+    h("div", { class: "p-sign-name", text: (s.name || s.i) + (s.at ? " · " + timeOf(s.at) : "") }));
+}
+
+function historyLine(record) {
+  const parts = C.SHIFTS.map((sh) => C.signHistoryText(record, sh)).filter(Boolean);
+  return parts.length ? h("p", { class: "p-foot", text: "Sign-off history - " + parts.join(" | ") }) : null;
+}
+
 export function linePrint(record) {
   const tpl = record.tpl;
-  const sign = { am: fieldValue(record, signKey("am")), pm: fieldValue(record, signKey("pm")) };
   const cols = h("colgroup", null,
     ["c-item", "c-temp", "c-life", "c-ut", "c-q", "c-mark", "c-com", "c-mark", "c-com"].map((c) => h("col", { class: c })));
 
@@ -68,16 +71,18 @@ export function linePrint(record) {
         h("td", { class: "p-com", text: normLine(pm).n })));
     }
   }
+  const sAm = C.signedBy(record, "am"), sPm = C.signedBy(record, "pm");
   body.appendChild(h("tr", { class: "p-initials" },
     h("td", { colspan: 4 }),
     h("td", { class: "p-right", text: "MANAGER INITIALS" }),
-    h("td", { class: "p-mark", text: (sign.am && sign.am.i) || "" }),
-    h("td", { class: "p-com", text: sign.am && sign.am.at ? "Signed " + timeOf(sign.am.at) : "" }),
-    h("td", { class: "p-mark", text: (sign.pm && sign.pm.i) || "" }),
-    h("td", { class: "p-com", text: sign.pm && sign.pm.at ? "Signed " + timeOf(sign.pm.at) : "" })));
+    h("td", { class: "p-mark p-ini", text: sAm ? sAm.i || C.initialsOf(sAm.name) : "" }),
+    h("td", { class: "p-com" }, signCell(record, "am")),
+    h("td", { class: "p-mark p-ini", text: sPm ? sPm.i || C.initialsOf(sPm.name) : "" }),
+    h("td", { class: "p-com" }, signCell(record, "pm"))));
 
   return h("section", { class: "print-doc print-line" },
     h("table", { class: "p-table" }, cols, head, body),
+    historyLine(record),
     h("p", { class: "p-foot", text: "✓ = OK   ✗ = not OK (see comment)   Temperatures in °C. Printed " + new Date().toLocaleString("en-IE") + "." }));
 }
 
@@ -94,10 +99,18 @@ function tempCell(record, row, slot, attrs) {
   return h("td", Object.assign({ class: "p-center" + (bad ? " pm-bad" : "") }, attrs || {}), text);
 }
 
+/** Dish washer cell: "66 / 84" (older days kept "66/84" in one box). */
+function dishCell(record, dish, slot) {
+  const w = cellText(record, dish.id, slot + "w"), r = cellText(record, dish.id, slot + "r");
+  const old = cellText(record, dish.id, slot);
+  const text = w || r ? (w || "–") + " / " + (r || "–") : old;
+  const bad = w || r ? C.judgeDish(w, r, dish.limit) === "bad" : C.dishBad(old, dish.limit);
+  return h("td", { colspan: 2, class: "p-center" + (bad ? " pm-bad" : "") }, text);
+}
 
 export function tempPrint(record) {
   const T = record.tpl.temps;
-  const name = (row, label) => (row.name || cellText(record, row.id, "name")) + (label ? " (" + label + ")" : "");
+  const name = (row, label) => { const n = C.rowName(record, row); return n ? n + (label ? " (" + label + ")" : "") : ""; };
   const lim = (l) => (l.max != null ? l.max + "°C" : l.min + "°C");
 
   const main = h("table", { class: "p-table t-main" },
@@ -119,11 +132,9 @@ export function tempPrint(record) {
       h("tr", { class: "t-gap" }, h("td", { colspan: 11 })),
       [...T.hot, T.dish].map((row) => h("tr", null,
         h("td", { class: "p-name", text: row === T.dish ? row.name + " (" + row.label + ")" : name(row, lim(row.limit)) }),
-        h("td", { class: "p-small", text: cellText(record, row.id, "food") }),
+        h("td", { class: "p-small", text: row === T.dish ? "wash / rinse" : cellText(record, row.id, "food") }),
         h("td", { class: "t-black" }),
-        HOT_SLOTS.map(([slot]) => row === T.dish
-          ? h("td", { colspan: 2, class: "p-center" + (dishBad(cellText(record, row.id, slot), row.limit) ? " pm-bad" : ""), text: cellText(record, row.id, slot) })
-          : tempCell(record, row, slot, { colspan: 2 })),
+        HOT_SLOTS.map(([slot]) => (row === T.dish ? dishCell(record, row, slot) : tempCell(record, row, slot, { colspan: 2 }))),
         h("td", { class: "t-black" }),
         h("td", { class: "p-com", text: cellText(record, row.id, "ca") })))));
 
@@ -148,11 +159,33 @@ export function tempPrint(record) {
         h("td", { class: "p-center", text: cellText(record, r.id, "am") }),
         h("td", { class: "p-center", text: cellText(record, r.id, "pm") })]))));
 
+  const signs = h("table", { class: "p-table t-side t-signs" },
+    h("tbody", null, h("tr", null,
+      h("th", { class: "t-big", text: "CHECKED BY" }),
+      h("th", { class: "p-small", text: "AM" }), h("td", null, signCell(record, "am")),
+      h("th", { class: "p-small", text: "PM" }), h("td", null, signCell(record, "pm")))));
+
   return h("section", { class: "print-doc print-temps" },
     h("div", { class: "t-head" },
       h("div", { class: "t-date", text: "Date : " + slashDate(record.date) + "  (" + prettyDate(record.date, { weekday: "long" }) + ")" }),
       h("h1", { text: "Temperature Checklist" }),
       h("img", { src: LOGO, alt: "Hard Rock Cafe" })),
-    main, fryer, surface("GRILL", T.grill), surface("FLAT TOP", T.flat),
+    main, fryer, surface("GRILL", T.grill), surface("FLAT TOP", T.flat), signs,
+    historyLine(record),
     h("p", { class: "p-foot", text: "This page is for one day. Readings in °C; out-of-range readings are shown in bold red. Printed " + new Date().toLocaleString("en-IE") + "." }));
+}
+
+/* ---------- Photos ---------- */
+
+/** photos: [{ url, label, at }] from photos.dayPhotos(). */
+export function photosPrint(record, photos) {
+  if (!photos.length) return null;
+  return h("section", { class: "print-doc print-photos" },
+    h("div", { class: "t-head" },
+      h("div", { class: "t-date", text: "Date : " + slashDate(record.date) }),
+      h("h1", { text: "Line Check & Temperature Photos" }),
+      h("img", { src: LOGO, alt: "Hard Rock Cafe" })),
+    h("div", { class: "photo-grid" }, photos.map((p) => h("figure", null,
+      h("img", { src: p.url, alt: p.label || "Photo" }),
+      h("figcaption", { text: (p.label || "Photo") + " · " + timeOf(p.at) })))));
 }

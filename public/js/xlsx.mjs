@@ -1,20 +1,26 @@
 /*
  * Fills in the original Excel templates (public/templates/) and hands them
- * back as a download, so the result is the same file as the paper process,
- * with the same layout, logo and print settings - just filled in.
+ * back as a download: the same file as the paper process, with the same
+ * layout, logo and print settings, filled in.
  *
- * Only the cell values are touched: the workbook is unzipped, the sheet XML
- * edited, and zipped again.
+ * The workbook is unzipped, the sheet XML edited (cell values, plus the
+ * signature pictures), and zipped again. Rows are matched to the checklist
+ * by name, then by position, so an item renamed or spelled differently in
+ * the app still lands on its row - with the app's wording written in.
  */
 import { unzipSync, zipSync, strToU8, strFromU8 } from "../vendor/fflate.mjs";
-import {
-  normLine, fieldValue, lineKey, signKey, tempKey, parseTemp, FRIDGE_SLOTS, HOT_SLOTS,
-} from "./core.mjs";
+import * as C from "./core.mjs";
+import { sigPng, isSig } from "./signature.mjs";
 
+const { normLine, fieldValue, lineKey, tempKey, parseTemp, FRIDGE_SLOTS, HOT_SLOTS, slashDate, timeOf } = C;
 const NS = "http://schemas.openxmlformats.org/spreadsheetml/2006/main";
 const REL_NS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships";
+const PKG_REL_NS = "http://schemas.openxmlformats.org/package/2006/relationships";
+const XDR_NS = "http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing";
+const A_NS = "http://schemas.openxmlformats.org/drawingml/2006/main";
 const XML_NS = "http://www.w3.org/XML/1998/namespace";
 const XML_DECL = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\r\n';
+const EMU = 9525; // per pixel
 
 export const LINE_TEMPLATE = "templates/line-check.xlsx";
 export const TEMP_TEMPLATE = "templates/temperature-checklist.xlsx";
@@ -32,12 +38,22 @@ function splitRef(ref) {
   return { col: colNumber(m[1]), row: Number(m[2]) };
 }
 
+function resolvePath(base, target) {
+  if (target.startsWith("/")) return target.slice(1);
+  const parts = base.split("/").slice(0, -1);
+  for (const p of target.split("/")) {
+    if (p === "..") parts.pop();
+    else if (p !== ".") parts.push(p);
+  }
+  return parts.join("/");
+}
+
 class Workbook {
   constructor(bytes) {
     this.files = unzipSync(bytes);
     this.parser = new DOMParser();
     this.docs = new Map();
-    this.wrapped = new Map();
+    this.styles = new Map();
     this.shared = [];
     if (this.files["xl/sharedStrings.xml"]) {
       const doc = this.xml("xl/sharedStrings.xml");
@@ -48,6 +64,7 @@ class Workbook {
 
   xml(path) {
     if (!this.docs.has(path)) {
+      if (!this.files[path]) throw new Error("The template is missing " + path + ".");
       const doc = this.parser.parseFromString(strFromU8(this.files[path]), "application/xml");
       if (doc.getElementsByTagName("parsererror").length) throw new Error("Couldn't read " + path + " in the template.");
       this.docs.set(path, doc);
@@ -55,21 +72,25 @@ class Workbook {
     return this.docs.get(path);
   }
 
+  rels(path) {
+    const relPath = path.replace(/([^/]+)$/, "_rels/$1.rels");
+    return { relPath, doc: this.files[relPath] ? this.xml(relPath) : null };
+  }
+
   sheet(name) {
     const wb = this.xml("xl/workbook.xml");
     const sheet = [...wb.getElementsByTagNameNS(NS, "sheet")].find((s) => s.getAttribute("name") === name);
     if (!sheet) throw new Error('The template has no sheet called "' + name + '".');
     const rid = sheet.getAttributeNS(REL_NS, "id");
-    const rels = this.xml("xl/_rels/workbook.xml.rels");
-    const rel = [...rels.getElementsByTagName("Relationship")].find((r) => r.getAttribute("Id") === rid);
-    const target = rel.getAttribute("Target").replace(/^\/?xl\//, "").replace(/^\//, "");
-    return new Sheet(this, "xl/" + target);
+    const rel = [...this.rels("xl/workbook.xml").doc.getElementsByTagName("Relationship")].find((r) => r.getAttribute("Id") === rid);
+    return new Sheet(this, resolvePath("xl/workbook.xml", rel.getAttribute("Target")));
   }
 
-  /** A copy of cell style `id` with text wrapping on (for comments). */
-  wrapStyle(id) {
+  /** A copy of cell style `id` with wrapping on and the given vertical alignment. */
+  wrapStyle(id, vertical = "center") {
     id = String(id || "0");
-    if (this.wrapped.has(id)) return this.wrapped.get(id);
+    const cacheKey = id + "|" + vertical;
+    if (this.styles.has(cacheKey)) return this.styles.get(cacheKey);
     const doc = this.xml("xl/styles.xml");
     const xfs = doc.getElementsByTagNameNS(NS, "cellXfs")[0];
     const list = [...xfs.getElementsByTagNameNS(NS, "xf")].filter((x) => x.parentNode === xfs);
@@ -80,12 +101,12 @@ class Workbook {
       copy.insertBefore(align, copy.firstChild);
     }
     align.setAttribute("wrapText", "1");
-    align.setAttribute("vertical", "center");
+    align.setAttribute("vertical", vertical);
     copy.setAttribute("applyAlignment", "1");
     xfs.appendChild(copy);
     xfs.setAttribute("count", String(list.length + 1));
     const newId = String(list.length);
-    this.wrapped.set(id, newId);
+    this.styles.set(cacheKey, newId);
     return newId;
   }
 
@@ -103,6 +124,7 @@ class Workbook {
 class Sheet {
   constructor(book, path) {
     this.book = book;
+    this.path = path;
     this.doc = book.xml(path);
     this.data = this.doc.getElementsByTagNameNS(NS, "sheetData")[0];
   }
@@ -147,7 +169,8 @@ class Sheet {
   /**
    * Write text or a number into a cell, keeping its formatting. "" clears it.
    * opts.size / opts.font set the text's own size and font (the template's
-   * 22-26pt cells are too big for most entries); opts.wrap turns wrapping on.
+   * 22-26pt cells are too big for most entries); opts.wrap turns wrapping on
+   * (opts.valign: "top" | "center").
    */
   set(ref, value, opts) {
     opts = opts || {};
@@ -163,7 +186,7 @@ class Sheet {
       return;
     }
     cell.setAttribute("t", "inlineStr");
-    if (opts.wrap) cell.setAttribute("s", this.book.wrapStyle(cell.getAttribute("s")));
+    if (opts.wrap) cell.setAttribute("s", this.book.wrapStyle(cell.getAttribute("s"), opts.valign));
     const is = this.doc.createElementNS(NS, "is");
     const t = this.doc.createElementNS(NS, "t");
     t.setAttributeNS(XML_NS, "xml:space", "preserve");
@@ -181,22 +204,97 @@ class Sheet {
     }
     cell.appendChild(is);
   }
+
+  /** Only rewrite a cell when its text actually differs (keeps any special formatting). */
+  setText(ref, value) {
+    const same = (x) => String(x || "").replace(/\s+/g, " ").trim();
+    if (same(this.text(ref)) !== same(value)) this.set(ref, value || "");
+  }
+
+  /**
+   * Put a PNG picture over a cell (col/row are 0-based), using the sheet's
+   * existing drawing part. Returns false if the template has no drawing part.
+   */
+  addPicture(png, name, col, row, { dx = 0, dy = 0, width, height }) {
+    const book = this.book;
+    const sheetRels = book.rels(this.path).doc;
+    if (!sheetRels) return false;
+    const drawRel = [...sheetRels.getElementsByTagName("Relationship")].find((r) => /\/drawing$/.test(r.getAttribute("Type")));
+    if (!drawRel) return false;
+    const drawingPath = resolvePath(this.path, drawRel.getAttribute("Target"));
+    const drawing = book.xml(drawingPath);
+    let { relPath, doc: rels } = book.rels(drawingPath);
+    if (!rels) {
+      rels = book.parser.parseFromString('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="' + PKG_REL_NS + '"/>', "application/xml");
+      book.files[relPath] = strToU8("");
+      book.docs.set(relPath, rels);
+    }
+    // A free file name, relationship id and picture id.
+    let k = 1;
+    while (book.files["xl/media/line-check-" + k + ".png"]) k++;
+    const media = "xl/media/line-check-" + k + ".png";
+    book.files[media] = png;
+    const ids = new Set([...rels.getElementsByTagName("Relationship")].map((r) => r.getAttribute("Id")));
+    let rid = "rIdLc" + k;
+    while (ids.has(rid)) rid += "x";
+    const rel = rels.createElementNS(PKG_REL_NS, "Relationship");
+    rel.setAttribute("Id", rid);
+    rel.setAttribute("Type", "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image");
+    rel.setAttribute("Target", resolveRelative(drawingPath, media));
+    rels.documentElement.appendChild(rel);
+    const used = [...drawing.getElementsByTagNameNS(XDR_NS, "cNvPr")].map((e) => Number(e.getAttribute("id")) || 0);
+    const picId = Math.max(1000, ...used) + 1;
+
+    const x = (tag, ...kids) => { const e = drawing.createElementNS(XDR_NS, "xdr:" + tag); kids.forEach((c) => e.appendChild(c)); return e; };
+    const a = (tag, attrs, ...kids) => {
+      const e = drawing.createElementNS(A_NS, "a:" + tag);
+      for (const [k2, v] of Object.entries(attrs || {})) e.setAttribute(k2, String(v));
+      kids.forEach((c) => e.appendChild(c));
+      return e;
+    };
+    const num = (tag, n) => { const e = x(tag); e.textContent = String(Math.round(n)); return e; };
+    const ext = x("ext");
+    ext.setAttribute("cx", String(Math.round(width * EMU)));
+    ext.setAttribute("cy", String(Math.round(height * EMU)));
+    const cNvPr = x("cNvPr");
+    cNvPr.setAttribute("id", String(picId));
+    cNvPr.setAttribute("name", name);
+    const blip = a("blip");
+    blip.setAttributeNS(REL_NS, "r:embed", rid);
+    const anchor = x("oneCellAnchor",
+      x("from", num("col", col), num("colOff", dx * EMU), num("row", row), num("rowOff", dy * EMU)),
+      ext,
+      x("pic",
+        x("nvPicPr", cNvPr, x("cNvPicPr", a("picLocks", { noChangeAspect: 1 }))),
+        x("blipFill", blip, a("stretch", null, a("fillRect"))),
+        x("spPr", a("xfrm", null, a("off", { x: 0, y: 0 }), a("ext", { cx: Math.round(width * EMU), cy: Math.round(height * EMU) })), a("prstGeom", { prst: "rect" }, a("avLst")))),
+      x("clientData"));
+    drawing.documentElement.appendChild(anchor);
+    // PNG needs a content type.
+    const types = book.xml("[Content_Types].xml");
+    const hasPng = [...types.documentElement.childNodes].some((n) => n.localName === "Default" && (n.getAttribute("Extension") || "").toLowerCase() === "png");
+    if (!hasPng) {
+      const d = types.createElementNS(types.documentElement.namespaceURI, "Default");
+      d.setAttribute("Extension", "png");
+      d.setAttribute("ContentType", "image/png");
+      types.documentElement.insertBefore(d, types.documentElement.firstChild);
+    }
+    return true;
+  }
+}
+
+/** Relative target from one part to another ("xl/drawings/d.xml" -> "xl/media/x.png" = "../media/x.png"). */
+function resolveRelative(from, to) {
+  const a = from.split("/").slice(0, -1), b = to.split("/");
+  let i = 0;
+  while (i < a.length && a[i] === b[i]) i++;
+  return "../".repeat(a.length - i) + b.slice(i).join("/");
 }
 
 async function openTemplate(url) {
   const res = await fetch(url, { cache: "no-cache" });
   if (!res.ok) throw new Error("Couldn't load the Excel template (" + res.status + ").");
   return new Workbook(new Uint8Array(await res.arrayBuffer()));
-}
-
-function slashDate(date) {
-  const [y, m, d] = date.split("-");
-  return d + "/" + m + "/" + y;
-}
-
-function timeOf(iso) {
-  const d = new Date(iso);
-  return isNaN(d) ? "" : d.toLocaleTimeString("en-IE", { hour: "2-digit", minute: "2-digit" });
 }
 
 /* ---------- Line check ("Horizontal" sheet) ---------- */
@@ -214,26 +312,12 @@ export function lineCommentText(v) {
   return [v.t ? v.t + "°C" : "", v.c.join(" "), v.n].filter(Boolean).join(" · ");
 }
 
-/**
- * Returns { blob, missing } - missing lists items the app has that the
- * Excel sheet doesn't (so they couldn't be written into it).
- */
-export async function lineCheckWorkbook(record, url = LINE_TEMPLATE) {
-  const book = await openTemplate(url);
-  const sheet = book.sheet("Horizontal");
+const SECTION_NAMES = ["miscellaneous", "line area", "prep kitchen"];
 
-  // Items still to place, by section then name, in order.
-  const queue = new Map();
-  for (const section of record.tpl.line) {
-    for (const item of section.items) {
-      const k = norm(section.name) + "|" + norm(item.name);
-      if (!queue.has(k)) queue.set(k, []);
-      queue.get(k).push(item);
-    }
-  }
-  const placed = new Set();
-
-  let section = null;
+/** The sheet's sections and item rows: [{ name, rows: [{ n, name }] }], plus the MANAGER INITIALS row. */
+function readLineSheet(sheet) {
+  const sections = [];
+  let cur = null;
   let initialsRow = null;
   for (const row of sheet.rows()) {
     const n = Number(row.getAttribute("r"));
@@ -241,36 +325,78 @@ export async function lineCheckWorkbook(record, url = LINE_TEMPLATE) {
     const a = sheet.text("A" + n), b = sheet.text("B" + n), e = sheet.text("E" + n), f = sheet.text("F" + n);
     if (norm(e) === "manager initials") { initialsRow = n; break; }
     if (!norm(a)) continue;
-    if (norm(f) === "am" || norm(b) === "temp" || (["miscellaneous", "line area", "prep kitchen"].includes(norm(a)) && !norm(e))) {
-      section = norm(a);
+    if (norm(f) === "am" || norm(b) === "temp" || (SECTION_NAMES.includes(norm(a)) && !norm(e))) {
+      cur = { name: norm(a), rows: [] };
+      sections.push(cur);
       continue;
     }
-    const list = queue.get(section + "|" + norm(a));
-    const item = list && list.shift();
-    const am = item ? fieldValue(record, lineKey(item.id, "am")) : null;
-    const pm = item ? fieldValue(record, lineKey(item.id, "pm")) : null;
-    sheet.set("F" + n, lineMarkText(am), MARK);
-    sheet.set("G" + n, lineCommentText(am), COMMENT);
-    sheet.set("H" + n, lineMarkText(pm), MARK);
-    sheet.set("I" + n, lineCommentText(pm), COMMENT);
-    if (item) placed.add(item.id);
+    if (cur) cur.rows.push({ n, name: norm(a) });
+  }
+  return { sections, initialsRow };
+}
+
+/** Pair things by key first, then the leftovers in order. */
+function pairUp(left, right, keyL, keyR) {
+  const pairs = [];
+  const freeR = right.slice();
+  const unL = [];
+  for (const l of left) {
+    const i = freeR.findIndex((r) => keyR(r) === keyL(l));
+    if (i >= 0) pairs.push([l, freeR.splice(i, 1)[0]]);
+    else unL.push(l);
+  }
+  while (unL.length && freeR.length) pairs.push([unL.shift(), freeR.shift()]);
+  return { pairs, leftL: unL, leftR: freeR };
+}
+
+/** Returns { blob, missing } - missing lists items the Excel sheet has no row for. */
+export async function lineCheckWorkbook(record, url = LINE_TEMPLATE) {
+  const book = await openTemplate(url);
+  const sheet = book.sheet("Horizontal");
+  const { sections, initialsRow } = readLineSheet(sheet);
+  const missing = [];
+
+  const secPairs = pairUp(record.tpl.line, sections, (s) => norm(s.name), (s) => s.name);
+  for (const s of secPairs.leftL) missing.push(...s.items.map((it) => it.name));
+  for (const s of secPairs.leftR) for (const r of s.rows) for (const col of "FGHI") sheet.set(col + r.n, "");
+
+  for (const [appSec, xlSec] of secPairs.pairs) {
+    const rowPairs = pairUp(appSec.items, xlSec.rows, (it) => norm(it.name), (r) => r.name);
+    for (const [item, r] of rowPairs.pairs) {
+      const n = r.n;
+      sheet.setText("A" + n, item.name);
+      if (appSec.columns) {
+        sheet.setText("B" + n, item.temp);
+        sheet.setText("C" + n, item.life);
+        sheet.setText("D" + n, item.utensil);
+      }
+      sheet.setText("E" + n, item.quality);
+      const am = fieldValue(record, lineKey(item.id, "am"));
+      const pm = fieldValue(record, lineKey(item.id, "pm"));
+      sheet.set("F" + n, lineMarkText(am), MARK);
+      sheet.set("G" + n, lineCommentText(am), COMMENT);
+      sheet.set("H" + n, lineMarkText(pm), MARK);
+      sheet.set("I" + n, lineCommentText(pm), COMMENT);
+    }
+    for (const r of rowPairs.leftR) for (const col of "FGHI") sheet.set(col + r.n, "");
+    for (const item of rowPairs.leftL) if (fieldValue(record, lineKey(item.id, "am")) || fieldValue(record, lineKey(item.id, "pm"))) missing.push(item.name);
   }
 
   sheet.set("F4", slashDate(record.date));
   if (initialsRow) {
-    for (const [shift, mark, time] of [["am", "F", "G"], ["pm", "H", "I"]]) {
-      const s = fieldValue(record, signKey(shift));
-      sheet.set(mark + initialsRow, s && s.i ? s.i : "", { size: 14, font: "Calibri" });
-      sheet.set(time + initialsRow, s && s.at ? timeOf(s.at) : "", { size: 12, font: "Calibri" });
+    for (const [shift, mark, nameCol, colIndex] of [["am", "F", "G", 6], ["pm", "H", "I", 8]]) {
+      const s = C.signedBy(record, shift);
+      sheet.set(mark + initialsRow, s ? s.i || C.initialsOf(s.name) : "", { size: 14, font: "Calibri" });
+      sheet.set(nameCol + initialsRow, s ? (s.name || s.i) + (s.at ? " · " + timeOf(s.at) : "") : "", { size: 11, font: "Calibri", wrap: true, valign: "top" });
+      if (s && isSig(s.sig)) {
+        try {
+          const png = await sigPng(s.sig, 520, 156);
+          sheet.addPicture(png, "Signature " + shift.toUpperCase(), colIndex, initialsRow - 1, { dx: 3, dy: 22, width: 130, height: 39 });
+        } catch { /* the name and time are there; the picture is a bonus */ }
+      }
     }
   }
-
-  const missing = record.tpl.line.flatMap((s) => s.items).filter((it) => !placed.has(it.id) && !isEmptyItem(record, it.id)).map((it) => it.name);
   return { blob: book.blob(), missing };
-}
-
-function isEmptyItem(record, id) {
-  return !fieldValue(record, lineKey(id, "am")) && !fieldValue(record, lineKey(id, "pm"));
 }
 
 /* ---------- Temperature Checklist ---------- */
@@ -291,10 +417,15 @@ export async function temperatureWorkbook(record, url = TEMP_TEMPLATE) {
     const n = parseTemp(v);
     return n == null ? v : n;
   };
+  const TEXT = { size: 14, font: "Calibri", wrap: true };
 
   sheet.set("A3", "Date : " + slashDate(record.date));
+  const who = C.SHIFTS.map((sh) => {
+    const s = C.signedBy(record, sh);
+    return s ? C.SHIFT_NAME[sh] + ": " + (s.name || s.i) + " " + timeOf(s.at) : "";
+  }).filter(Boolean);
+  if (who.length) sheet.set("D3", "Checked and signed - " + who.join("   ·   "), { size: 14, font: "Calibri" });
 
-  const TEXT = { size: 14, font: "Calibri", wrap: true };
   const blankName = (row, n) => {
     if (!row.name && val(row.id, "name")) sheet.set("A" + n, val(row.id, "name"));
   };
@@ -307,13 +438,19 @@ export async function temperatureWorkbook(record, url = TEMP_TEMPLATE) {
     sheet.set("L" + n, val(row.id, "ca"), TEXT);
   });
 
-  [...T.hot.slice(0, 8), T.dish].forEach((row, i) => {
+  T.hot.slice(0, 8).forEach((row, i) => {
     const n = 21 + i;
     blankName(row, n);
-    for (const [slot] of HOT_SLOTS) sheet.set(HOT_COLS[slot] + n, row === T.dish ? val(row.id, slot) : num(row.id, slot));
+    for (const [slot] of HOT_SLOTS) sheet.set(HOT_COLS[slot] + n, num(row.id, slot));
     sheet.set("B" + n, val(row.id, "food"), TEXT);
     sheet.set("L" + n, val(row.id, "ca"), TEXT);
   });
+  // Dish washer (row 29): "wash / rinse" (older days kept "66/84" in one box).
+  for (const [slot] of HOT_SLOTS) {
+    const w = val("dish", slot + "w"), r = val("dish", slot + "r");
+    sheet.set(HOT_COLS[slot] + "29", w || r ? (w || "–") + " / " + (r || "–") : val("dish", slot));
+  }
+  sheet.set("L29", val("dish", "ca"), TEXT);
 
   [["B", "C", "D"], ["E", "F", "G"], ["H", "I", "J"], ["K", "L", "M"]].forEach(([t, p, notes], i) => {
     const f = T.fryers[i];

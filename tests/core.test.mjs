@@ -59,7 +59,7 @@ test("merging keeps the newest value of each box", () => {
 });
 
 test("merging ignores bad entries and breaks ties the same way both ways", () => {
-  const bad = { "nope": { v: 1, t: 5 }, "L:x:am": { v: "x".repeat(5000), t: 9 }, "L:y:am": { v: 1, t: -1 } };
+  const bad = { "nope": { v: 1, t: 5 }, "L:x:am": { v: "x".repeat(C.MAX_VALUE_CHARS + 10), t: 9 }, "L:y:am": { v: 1, t: -1 } };
   assert.deepEqual(C.mergeFields({}, bad).fields, {});
   const p = { "L:x:am": { v: { s: "ok" }, t: 7 } };
   const q = { "L:x:am": { v: { s: "no" }, t: 7 } };
@@ -74,15 +74,17 @@ test("progress and summary", () => {
     [C.lineKey(first.id, "am")]: { v: { s: "ok" }, t: 1 },
     [C.lineKey(second.id, "am")]: { v: { s: "no", n: "chipped" }, t: 1 },
     [C.lineKey(leaf.id, "am")]: { v: { s: "ok", t: "9" }, t: 1 },
-    [C.signKey("am")]: { v: { i: "JD", at: "2026-10-11T11:00:00Z" }, t: 1 },
+    [C.signKey("am")]: { v: { name: "John Doyle", i: "JD", at: "2026-10-11T11:00:00Z" }, t: 1 },
     [C.tempKey("fr-freezer", "open")]: { v: "-19", t: 1 },
   } };
   const am = C.shiftProgress(record, "am");
   assert.equal(am.done, 3);
   assert.equal(am.issues, 2, "a flagged item and an out-of-range temperature");
-  assert.equal(am.signed.i, "JD");
+  assert.equal(am.signed.name, "John Doyle");
   assert.equal(C.shiftProgress(record, "pm").done, 0);
-  assert.deepEqual(C.summarize(record), { am: [3, 218, 2, "JD"], pm: [0, 218, 0, ""], temps: 1 });
+  const sum = C.summarize(record);
+  assert.deepEqual([sum.am.d, sum.am.n, sum.am.i, sum.am.s], [3, 218, 2, "John Doyle"]);
+  assert.deepEqual([sum.pm.d, sum.pm.i, sum.pm.s], [0, 0, ""]);
 });
 
 test("trading day and shift", () => {
@@ -106,4 +108,75 @@ test("temperature checklist rows match the paper sheet", () => {
   const keys = [...T.fridges, ...T.hot, T.dish, ...T.fryers, ...T.grill, ...T.flat].flatMap((r) =>
     ["open", "12i", "12f", "16i", "16f", "20i", "20f", "close", "12", "16", "20", "food", "ca", "name", "temp", "tpm", "notes", "am", "pm"].map((s) => C.tempKey(r.id, s)));
   for (const k of keys) assert.ok(C.isValidKey(k), k);
+});
+
+test("every key the app writes is one that merging and backups accept", () => {
+  const tpl = C.buildTemplate();
+  const record = { tpl, f: {} };
+  const keys = [
+    ...C.lineItems(tpl).flatMap((it) => C.SHIFTS.map((s) => C.lineKey(it.id, s))),
+    ...C.SHIFTS.flatMap((s) => [C.signKey(s), C.histKey(s)]),
+    ...C.SHIFTS.flatMap((s) => C.tempTasks(record, s).map((t) => t.key)),
+    C.photoKey(C.newPhotoId()),
+  ];
+  for (const r of [...tpl.temps.fridges, ...tpl.temps.hot, tpl.temps.dish]) for (const slot of ["food", "ca", "name"]) keys.push(C.tempKey(r.id, slot));
+  for (const r of [...tpl.temps.fryers, ...tpl.temps.grill, ...tpl.temps.flat]) keys.push(C.tempKey(r.id, "notes"));
+  for (const k of keys) assert.ok(C.validEntry(k, { v: "x", t: 1 }), k);
+  assert.equal(new Set(keys).size, keys.length, "no two boxes share a key");
+});
+
+test("what each shift has to take on the temperature sheet", () => {
+  const tpl = C.buildTemplate();
+  const record = { tpl, f: {} };
+  // AM: 11 fridges x (opening, 12 item, 12 fridge) + 6 hot x 12:00 + dish wash/rinse + 4 fryers x 2 + 6 grill/flat
+  assert.equal(C.tempTasks(record, "am").length, 33 + 6 + 2 + 8 + 6);
+  // PM: 11 x 5 + 6 x 2 + dish 2 x 2 + 6
+  assert.equal(C.tempTasks(record, "pm").length, 55 + 12 + 4 + 6);
+  // A spare row counts once it has a name.
+  const other = tpl.temps.fridges.find((r) => !r.name);
+  record.f[C.tempKey(other.id, "name")] = { v: "Bar fridge", t: 1 };
+  assert.equal(C.tempTasks(record, "am").length, 33 + 3 + 6 + 2 + 8 + 6);
+});
+
+test("sign-off is blocked by problems without a corrective action", () => {
+  const tpl = C.buildTemplate();
+  const leaf = C.lineItems(tpl).find((i) => i.name === "Leaf Lettuce");
+  const freezer = tpl.temps.fridges[0];
+  const record = { tpl, f: {
+    [C.lineKey(leaf.id, "am")]: { v: { s: "no", t: "9" }, t: 1 },
+    [C.tempKey(freezer.id, "open")]: { v: "-12", t: 1 },
+  } };
+  assert.deepEqual(C.lineNeedingAction(record, "am").map((i) => i.name), ["Leaf Lettuce"]);
+  assert.equal(C.tempsNeedingAction(record, "am").length, 1);
+  record.f[C.lineKey(leaf.id, "am")] = { v: { s: "no", t: "9", n: "Binned, new batch" }, t: 2 };
+  record.f[C.tempKey(freezer.id, "ca")] = { v: "Door fixed, re-probed -19", t: 2 };
+  assert.equal(C.lineNeedingAction(record, "am").length, 0);
+  assert.equal(C.tempsNeedingAction(record, "am").length, 0);
+  assert.equal(C.tempsNeedingAction(record, "pm").length, 0, "the PM shift isn't blocked by AM readings");
+});
+
+test("small helpers", () => {
+  assert.equal(C.cleanTemp(" 4,5° "), "4.5");
+  assert.equal(C.cleanTemp("-18"), "-18");
+  assert.equal(C.cleanTemp("abc"), "abc");
+  assert.equal(C.judgeDish("66", "84", { wash: 64, rinse: 82 }), "ok");
+  assert.equal(C.judgeDish("60", "", { wash: 64, rinse: 82 }), "bad");
+  assert.equal(C.judgeDish("", "", { wash: 64, rinse: 82 }), null);
+  assert.equal(C.offTarget("150", 177), true);
+  assert.equal(C.offTarget("170", 177), false);
+  assert.equal(C.initialsOf("Mary Kelly"), "MK");
+  assert.equal(C.initialsOf("  mary-kate o'brien "), "MKO");
+  assert.deepEqual(C.compactLine({ s: "ok", t: "", c: [], n: "" }), { s: "ok" });
+  assert.equal(C.compactLine({ s: "", t: "", c: [], n: "" }), null);
+  assert.match(C.newPhotoId(), /^ph-[a-z0-9]+-[a-z0-9]{4}$/);
+});
+
+test("first-version dish washer readings are split into wash and rinse", () => {
+  const f = { "T:dish:12": { v: "66/84", t: 7 } };
+  C.upgradeFields(f);
+  assert.deepEqual(f["T:dish:12w"], { v: "66", t: 7 });
+  assert.deepEqual(f["T:dish:12r"], { v: "84", t: 7 });
+  const g = { "T:dish:12": { v: "66/84", t: 7 }, "T:dish:12w": { v: "70", t: 9 } };
+  C.upgradeFields(g);
+  assert.equal(g["T:dish:12w"].v, "70", "a newer wash reading is kept");
 });

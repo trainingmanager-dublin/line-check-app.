@@ -4,9 +4,12 @@
   "version": "1.0.0",
   "description": "Hard Rock Cafe Dublin digital line check and temperature checklist (tablet app)",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "start": "node scripts/dev-server.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "e2e": "node tests/e2e/app.e2e.mjs"
   }
 }
