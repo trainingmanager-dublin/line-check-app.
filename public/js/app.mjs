@@ -380,21 +380,36 @@ function focusNext(current, selector) {
   }
 }
 
+/**
+ * Ticks every unchecked item in the section that doesn't need a temperature.
+ * Temperature items need their reading (an in-range reading ticks itself),
+ * so they're left, and the first one is opened ready to type.
+ */
 function markSectionOk(section, shift) {
   const before = [];
+  const needReading = [];
   for (const item of section.items) {
     const key = C.lineKey(item.id, shift);
     const v = C.normLine(value(key));
     if (v.s) continue;
-    if (C.judgeTemp(v.t, item.limit) === "bad") continue;
+    if (item.limit) { needReading.push(item); continue; }
     before.push([key, value(key)]);
     save(key, Object.assign(v, { s: "ok" }));
     const r = rows.get(item.id);
     if (r) r.update();
   }
   refreshProgress();
-  if (!before.length) return toast("Everything in " + section.name + " is already done.");
-  toast(before.length + " item" + (before.length === 1 ? "" : "s") + " in " + section.name + " marked OK.", "ok", {
+  const readings = needReading.length ? needReading.length + " temperature" + (needReading.length === 1 ? "" : "s") + " still to take." : "";
+  if (needReading.length) {
+    const el = document.querySelector('.item[data-id="' + CSS.escape(needReading[0].id) + '"]');
+    jumpTo(el);
+    const input = el && el.querySelector("input.temp:not(:disabled)");
+    if (input) input.focus({ preventScroll: true });
+  }
+  if (!before.length) {
+    return toast(readings ? "Only temperatures left in " + section.name + ": " + readings : "Everything in " + section.name + " is already done.");
+  }
+  toast(before.length + " item" + (before.length === 1 ? "" : "s") + " in " + section.name + " marked OK." + (readings ? " " + readings : ""), "ok", {
     label: "Undo",
     run: safe(() => {
       for (const [key, old] of before) save(key, old);

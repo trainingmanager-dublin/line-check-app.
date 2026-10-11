@@ -12,7 +12,9 @@ still print the same sheets or download them as the original Excel files, filled
   and a comment box open when you tap !.
 - **Temperatures:** type the reading. An in-range reading ticks the item for you. Enter jumps to the
   next temperature. An out-of-range reading turns red and asks for the corrective action.
-- **Rest OK** on a section ticks every item that hasn't been done yet. There's an Undo.
+- **Rest OK** on a section ticks every item that hasn't been done yet, except the ones that need a
+  temperature: those need their reading, so Rest OK takes you to the first one ready to type.
+  There's an Undo.
 - **"… left – next"** (bottom right) jumps to the next item that isn't checked.
 - **AM / PM:** each shift fills its own column of the same day. The other shift's result shows under
   each item. The PM manager opens the day (it's already open: it's *today*) and carries on.
